@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Betalingswijze__c</fullName>
+    <defaultValue>IF($RecordType.DeveloperName = &quot;Particulier&quot; , &quot;Contant/Pin bij oplevering of vooraf via iDEAL.&quot;, &quot;Factuur&quot;)</defaultValue>
+    <externalId>false</externalId>
+    <label>Betalingswijze</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Betalingswijze</valueSetName>
+    </valueSet>
+</CustomField>

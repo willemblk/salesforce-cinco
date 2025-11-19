@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hoe_reinigen__c</fullName>
+    <externalId>false</externalId>
+    <label>Hoe Reinigen?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bad + Wasvloer</fullName>
+                <default>false</default>
+                <label>Bad + Wasvloer</label>
+            </value>
+            <value>
+                <fullName>Wasvloer</fullName>
+                <default>false</default>
+                <label>Wasvloer</label>
+            </value>
+            <value>
+                <fullName>Wasautomaat</fullName>
+                <default>false</default>
+                <label>Wasautomaat</label>
+            </value>
+            <value>
+                <fullName>Sproei-Extractie</fullName>
+                <default>false</default>
+                <label>Sproei-Extractie</label>
+            </value>
+            <value>
+                <fullName>Bonnet</fullName>
+                <default>false</default>
+                <label>Bonnet</label>
+            </value>
+            <value>
+                <fullName>Anders</fullName>
+                <default>false</default>
+                <label>Anders</label>
+            </value>
+            <value>
+                <fullName>Automatische Wasser</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Automatische Wasser</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

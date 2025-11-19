@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SR_Samenvatting_Werkzaamheden_Tekst__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Meubel_Totaal_Zitplaatsen__c  &gt; 0, 
+   &quot;Meubel - &quot;+TEXT(Meubel_Totaal_Zitplaatsen__c)&amp;&quot; zitplaatsen&quot;&amp;BR(), 
+   &quot;&quot;
+) &amp;
+IF(Vast_Tapijt_Totaal_m__c &gt; 0, 
+   &quot;Vast tapijt - &quot;+TEXT(Vast_Tapijt_Totaal_m__c)&amp;&quot; m²&quot;&amp;BR(), 
+   &quot;&quot;
+) &amp;
+IF(Matras_Totaal_ligplekken__c &gt; 0, 
+   &quot;Matras - &quot;+TEXT(Matras_Totaal_ligplekken__c)&amp;&quot; ligplekken&quot;, 
+   &quot;&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SR Samenvatting Werkzaamheden Tekst</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

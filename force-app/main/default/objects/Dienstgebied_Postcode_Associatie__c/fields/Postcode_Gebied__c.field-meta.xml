@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Postcode_Gebied__c</fullName>
+    <externalId>false</externalId>
+    <label>Postcode Gebied</label>
+    <referenceTo>Postcode_Range__c</referenceTo>
+    <relationshipName>Dienstgebied_Postcode_Associaties</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

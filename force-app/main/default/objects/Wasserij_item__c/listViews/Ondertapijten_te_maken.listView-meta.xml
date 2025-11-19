@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ondertapijten_te_maken</fullName>
+    <columns>CREATED_DATE</columns>
+    <columns>NAME</columns>
+    <columns>Breedte__c</columns>
+    <columns>Lengte__c</columns>
+    <columns>Soort__c</columns>
+    <columns>Rol_Ondertapijt__c</columns>
+    <columns>Wasrapport__c</columns>
+    <columns>Werk_Order__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Item__c</field>
+        <operation>equals</operation>
+        <value>Ondertapijt</value>
+    </filters>
+    <filters>
+        <field>Klaar_voor_aflevering__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Ondertapijten te maken</label>
+</ListView>

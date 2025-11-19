@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aantal_Werkorders_SR__c</fullName>
+    <description>Aantal werkorders SR zonder de klachten.</description>
+    <externalId>false</externalId>
+    <label>Aantal Werkorders SR</label>
+    <summaryFilterItems>
+        <field>Werk_Order__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>SR Zakelijk, SR</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Werk_Order__c.Is_Klacht__c</field>
+        <operation>equals</operation>
+        <value>False</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Werk_Order__c.Account__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

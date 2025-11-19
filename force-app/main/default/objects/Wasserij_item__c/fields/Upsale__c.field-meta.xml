@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Upsale__c</fullName>
+    <externalId>false</externalId>
+    <label>Upsale?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nee</fullName>
+                <default>true</default>
+                <label>Nee</label>
+            </value>
+            <value>
+                <fullName>Vlekkenbaas</fullName>
+                <default>false</default>
+                <label>Vlekkenbaas</label>
+            </value>
+            <value>
+                <fullName>Ontgeuren (10%)</fullName>
+                <default>false</default>
+                <label>Ontgeuren (10%)</label>
+            </value>
+            <value>
+                <fullName>Anti Mot Invriezen (10%)</fullName>
+                <default>false</default>
+                <label>Anti Mot Invriezen (10%)</label>
+            </value>
+            <value>
+                <fullName>Anti Allergie (10%)</fullName>
+                <default>false</default>
+                <label>Anti Allergie (10%)</label>
+            </value>
+            <value>
+                <fullName>Inpakken Opslag (10%)</fullName>
+                <default>false</default>
+                <label>Inpakken Opslag (10%)</label>
+            </value>
+            <value>
+                <fullName>Zijde Behandeling (10%)</fullName>
+                <default>false</default>
+                <label>Zijde Behandeling (10%)</label>
+            </value>
+            <value>
+                <fullName>Waterschade (10%)</fullName>
+                <default>false</default>
+                <label>Waterschade (10%)</label>
+            </value>
+            <value>
+                <fullName>Reparatie Rand (10%)</fullName>
+                <default>false</default>
+                <label>Reparatie Rand (10%)</label>
+            </value>
+            <value>
+                <fullName>Reiniging &amp; Protect (20%)</fullName>
+                <default>false</default>
+                <label>Reiniging &amp; Protect (20%)</label>
+            </value>
+            <value>
+                <fullName>Huisdier Compleet (20%)</fullName>
+                <default>false</default>
+                <label>Huisdier Compleet (20%)</label>
+            </value>
+            <value>
+                <fullName>Protect &amp; Care (20%)</fullName>
+                <default>false</default>
+                <label>Protect &amp; Care (20%)</label>
+            </value>
+            <value>
+                <fullName>Ontgeuren Overig (10%)</fullName>
+                <default>false</default>
+                <label>Ontgeuren Overig (10%)</label>
+            </value>
+            <value>
+                <fullName>Losse Kussens (10%)</fullName>
+                <default>false</default>
+                <label>Losse Kussens (10%)</label>
+            </value>
+            <value>
+                <fullName>Hele Dienst/Product (10%)</fullName>
+                <default>false</default>
+                <label>Hele Dienst/Product (10%)</label>
+            </value>
+            <value>
+                <fullName>Hele Dienst - Direct uitgevoerd (15%)</fullName>
+                <default>false</default>
+                <label>Hele Dienst - Direct uitgevoerd (15%)</label>
+            </value>
+            <value>
+                <fullName>Overig (10%)</fullName>
+                <default>false</default>
+                <label>Overig (10%)</label>
+            </value>
+            <value>
+                <fullName>Overig (20%)</fullName>
+                <default>false</default>
+                <label>Overig (20%)</label>
+            </value>
+            <value>
+                <fullName>Ja, 10% (Invriezen)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ja, 10% (Invriezen)</label>
+            </value>
+            <value>
+                <fullName>Ja, 10% (Overig)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ja, 10% (Overig)</label>
+            </value>
+            <value>
+                <fullName>Ja, 10% (vloerkleed, meubel, ondertapijt, product)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ja, 10% (vloerkleed, meubel, ondertapijt, product)</label>
+            </value>
+            <value>
+                <fullName>Ja, 25% (Impregneren)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ja, 25% (Impregneren)</label>
+            </value>
+            <value>
+                <fullName>Ja, 25% (Ontgeuren)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ja, 25% (Ontgeuren)</label>
+            </value>
+            <value>
+                <fullName>Ja, 25% (Overig)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ja, 25% (Overig)</label>
+            </value>
+            <value>
+                <fullName>Matras Compleet (25%)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Matras Compleet (25%)</label>
+            </value>
+            <value>
+                <fullName>Vezelbeschermer Eco (10%)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Vezelbeschermer Eco (10%)</label>
+            </value>
+            <value>
+                <fullName>Vlekkenbehandeling (25%)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Vlekkenbehandeling (25%)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

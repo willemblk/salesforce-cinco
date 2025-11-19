@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Offerte_geldigheidsduur_dagen_Nummer__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Offerte_geldigheidsduur_dagen__c, 
+&quot;7&quot;, 7, 
+&quot;14&quot;, 14, 
+&quot;30&quot;, 30, 
+&quot;60&quot;, 60, 
+0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Offerte - geldigheidsduur dagen Nummer</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

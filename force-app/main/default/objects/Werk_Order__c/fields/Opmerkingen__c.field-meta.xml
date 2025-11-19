@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opmerkingen__c</fullName>
+    <description>Komt op de werkbon en word niet gebruikt in emails naar klanten.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Komt op de werkbon en word NIET gebruikt in emails naar klanten.</inlineHelpText>
+    <label>Opmerkingen voor Uitvoerder</label>
+    <length>4000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

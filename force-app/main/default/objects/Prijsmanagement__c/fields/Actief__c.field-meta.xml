@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actief__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(
+    TODAY() &gt;= Geldig_vanaf__c,
+    OR(
+        ISBLANK(Geldig_tot__c),
+        TODAY() &lt;= Geldig_tot__c
+    )
+)</formula>
+    <label>Actief</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

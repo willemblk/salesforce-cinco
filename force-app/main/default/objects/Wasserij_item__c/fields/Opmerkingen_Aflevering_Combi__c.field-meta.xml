@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opmerkingen_Aflevering_Combi__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( INCLUDES ( Opmerkingen_voor_Aflevering__c , &quot;Vlekken/Verkleuringen hebben extra behandeling gehad maar blijven zichtbaar.&quot; ), &quot;Vlekken/Verkleuringen hebben extra behandeling gehad maar blijven zichtbaar.; &quot;,null ) &amp;
+IF ( INCLUDES ( Opmerkingen_voor_Aflevering__c , &quot;Lichte verkleuringen blijven zichtbaar.&quot; ), &quot;Lichte verkleuringen blijven zichtbaar.; &quot;,null ) &amp;
+IF ( INCLUDES ( Opmerkingen_voor_Aflevering__c , &quot;Looppad heeft extra behandeling gehad maar blijft zichtbaar.&quot; ), &quot;Looppad heeft extra behandeling gehad maar blijft zichtbaar.; &quot;,null ) &amp;
+IF ( INCLUDES ( Opmerkingen_voor_Aflevering__c , &quot;Slijtage blijft zichtbaar.&quot; ), &quot;Slijtage blijft zichtbaar.; &quot;,null ) &amp;
+IF ( INCLUDES ( Opmerkingen_voor_Aflevering__c , &quot;Huisdierongeluk hond&quot; ), &quot;Huisdierongeluk hond; &quot;,null ) &amp;
+IF ( INCLUDES ( Opmerkingen_voor_Aflevering__c , &quot;Slijtage blijft zichtbaar&quot; ), &quot;Slijtage blijft zichtbaar; &quot;,null ) &amp;
+IF ( INCLUDES ( Opmerkingen_voor_Aflevering__c , &quot;Geur is van kleed.&quot; ), &quot;Geur is van kleed.; &quot;,null ) &amp;
+IF ( INCLUDES ( Opmerkingen_voor_Aflevering__c , &quot;Geur komt van latex rug.&quot; ), &quot;Geur komt van latex rug.; &quot;,null ) &amp;
+IF ( INCLUDES ( Opmerkingen_voor_Aflevering__c , &quot;Best haalbare resultaat.&quot; ), &quot;Best haalbare resultaat.; &quot;,null ) &amp;
+IF ( INCLUDES ( Opmerkingen_voor_Aflevering__c , &quot;Slijtage franje blijft zichtbaar.&quot; ), &quot;Slijtage franje blijft zichtbaar.; &quot;,null ) &amp;
+IF ( INCLUDES ( Opmerkingen_voor_Aflevering__c , &quot;Diep vuil kan niet verwijderd worden zonder de vezel te beschadigen.&quot; ), &quot;Diep vuil kan niet verwijderd worden zonder de vezel te beschadigen.; &quot;,null ) &amp;
+IF ( INCLUDES ( Opmerkingen_voor_Aflevering__c , &quot;Uw tapijt is meerdere malen (intensief) geklopt, beste resultaat zonder de vezel of het tapijt te beschadigen.&quot; ), &quot;Uw tapijt is meerdere malen (intensief) geklopt, beste resultaat zonder de vezel of het tapijt te beschadigen.; &quot;,null ) &amp;
+
+
+
+
+
+
+
+
+
+BR()&amp;
+ 
+
+
+
+
+
+
+
+
+Opmerkingen__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Opmerkingen Aflevering Combi</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

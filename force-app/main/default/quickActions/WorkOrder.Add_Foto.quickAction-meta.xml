@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>WorkOrder.Add_Foto</fullName>
+  <label>Foto toevoegen</label>
+  <type>CreateRecord</type>
+  <description>Maak een nieuwe Foto (relatie naar Werk Order wordt automatisch gezet).</description>
+  <targetObject>Foto__c</targetObject>
+  <optionsCreateFeedItem>false</optionsCreateFeedItem>
+  <predefinedFieldValues>
+    <name>Werk_Order__c</name>
+    <value>{!WorkOrder.Id}</value>
+  </predefinedFieldValues>
+  <predefinedFieldValues>
+    <name>Is_Public__c</name>
+    <value>true</value>
+  </predefinedFieldValues>
+  <predefinedFieldValues>
+    <name>Bron__c</name>
+    <value>Formulier</value>
+  </predefinedFieldValues>
+</QuickAction>

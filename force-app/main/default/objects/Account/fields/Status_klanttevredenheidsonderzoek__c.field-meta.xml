@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_klanttevredenheidsonderzoek__c</fullName>
+    <externalId>false</externalId>
+    <label>Status klanttevredenheidsonderzoek</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Niet gebeld</fullName>
+                <default>true</default>
+                <label>Niet gebeld</label>
+            </value>
+            <value>
+                <fullName>1 x gebeld gg</fullName>
+                <default>false</default>
+                <label>1 x gebeld gg</label>
+            </value>
+            <value>
+                <fullName>2 x gebeld gg</fullName>
+                <default>false</default>
+                <label>2 x gebeld gg</label>
+            </value>
+            <value>
+                <fullName>3 x gebeld gg</fullName>
+                <default>false</default>
+                <label>3 x gebeld gg</label>
+            </value>
+            <value>
+                <fullName>Later terugbellen</fullName>
+                <default>false</default>
+                <label>Later terugbellen</label>
+            </value>
+            <value>
+                <fullName>Afgerond</fullName>
+                <default>false</default>
+                <label>Afgerond</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

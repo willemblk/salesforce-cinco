@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bel__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    ISBLANK(Account__r.Phone), 
+    &quot;&quot;, 
+    HYPERLINK(&quot;tel:&quot; &amp; Account__r.Phone , &quot;Telefoon&quot;,&quot;_self&quot; )
+)
+&amp; 
+IF(
+    AND(
+        NOT(ISBLANK(Account__r.Phone)),
+        NOT(ISBLANK(Account__r.PersonContact.MobilePhone))
+    ), 
+    BR() &amp; BR(), 
+    &quot;&quot;
+)
+&amp; 
+IF(
+    ISBLANK(Account__r.PersonContact.MobilePhone), 
+    &quot;&quot;, 
+    HYPERLINK(&quot;tel:&quot; &amp; Account__r.PersonContact.MobilePhone , &quot;Mobiel&quot;,&quot;_self&quot; )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Bel</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

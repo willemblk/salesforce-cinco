@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SMS_Herinnering_Offerte__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Als dit is aangevinkt wordt er per SMS een herinnering gestuurd van de offerte.</description>
+    <externalId>false</externalId>
+    <label>SMS Herinnering Offerte</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

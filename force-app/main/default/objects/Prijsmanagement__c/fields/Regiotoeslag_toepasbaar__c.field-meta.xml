@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regiotoeslag_toepasbaar__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When this field is checked and the product is added region toeslag needs to be added.</description>
+    <externalId>false</externalId>
+    <label>Regiotoeslag toepasbaar</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

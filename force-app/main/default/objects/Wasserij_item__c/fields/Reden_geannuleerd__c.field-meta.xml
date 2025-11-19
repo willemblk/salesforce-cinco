@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reden_geannuleerd__c</fullName>
+    <externalId>false</externalId>
+    <label>Reden geannuleerd</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Klant wil teveel garanties</fullName>
+                <default>false</default>
+                <label>Klant wil teveel garanties</label>
+            </value>
+            <value>
+                <fullName>Klant vindt het te lang duren</fullName>
+                <default>false</default>
+                <label>Klant vindt het te lang duren</label>
+            </value>
+            <value>
+                <fullName>Kan niet gereinigd worden</fullName>
+                <default>false</default>
+                <label>Kan niet gereinigd worden</label>
+            </value>
+            <value>
+                <fullName>Te groot/zwaar, kon het niet meekrijgen</fullName>
+                <default>false</default>
+                <label>Te groot/zwaar, kon het niet meekrijgen</label>
+            </value>
+            <value>
+                <fullName>Anders</fullName>
+                <default>false</default>
+                <label>Anders</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

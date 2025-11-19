@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WI_Wasserij</fullName>
+    <active>true</active>
+    <description>Gebruiken voor items die in de wasserij gereinigd worden.</description>
+    <label>Wasserij</label>
+    <picklistValues>
+        <picklist>Extra_behandelingen__c</picklist>
+        <values>
+            <fullName>Anti Allergie Behandeling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anti Mot Behandeling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Basisreiniging</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Huisdier Compleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Impregneren</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inpakken plastic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inpakken voor opslag</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ontgeuren</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reiniging %26 Protect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reparatie rand</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spoedbehandeling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waterschade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zijde Behandeling</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hoe_Kloppen__c</picklist>
+        <values>
+            <fullName>Badger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Klopkast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Klopmachine</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Luchtblazers%2Fhandmatig</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Hoe_reinigen__c</picklist>
+        <values>
+            <fullName>Anders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bad %2B Wasvloer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bonnet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sproei-Extractie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wasautomaat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wasvloer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Item__c</picklist>
+        <values>
+            <fullName>AK - Impregneren kussenset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AK - Reinigen kussenset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AK - Reinigen matras groot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>AK - Reinigen matras klein</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Afleverservice binnen %28max%2E 20 minuten%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Afvoeren vloerkleed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Annuleringskosten</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bijrijdertoeslag</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kleed %28p%2Fm%C2%B2%29</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Kleed %28wederverkoper%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kussen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Matras</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meubel %28p%2Fzitplaats%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onbehandeld - zelf ophalen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onbehandeld retour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ondertapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ophaalservice binnen %28max%2E 20 minuten%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opslag</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opslaghoes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tapijtreparatie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tapijtreparatie CC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Toeslag Minimum Tarief Wederverkoper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportkosten</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verzending</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Merk__c</picklist>
+        <values>
+            <fullName>Brink %26 Campman</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brinker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>De Munk Carpets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desso</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fraai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HKliving</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Louis de Poortere</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mart Visser</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moooi Carpets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rugvista</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Opmerkingen_Chauffeur__c</picklist>
+        <values>
+            <fullName>Diep vuil kan niet worden verwijderd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geen bijzonderheden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Getuft kleed%2C latex backing is oorzaak geur%2Fpoeder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Huisdierongeluk hond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Huisdierongeluk hond urine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Huisdierongeluk kat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Huisdierongeluk kat urine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kan meer gaan pluizen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Klant niet thuis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Looppad kan zichtbaar blijven</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slijtage blijft zichtbaar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vlekken%2Fverkleuringen kunnen zichtbaar blijven namelijk%3A</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Opmerkingen_voor_Aflevering__c</picklist>
+        <values>
+            <fullName>Best haalbare resultaat%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diep vuil kan niet verwijderd worden zonder de vezel te beschadigen%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geur is van kleed%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geur komt van latex rug%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lichte verkleuringen blijven zichtbaar%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Looppad heeft extra behandeling gehad maar blijft zichtbaar%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slijtage blijft zichtbaar%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slijtage franje blijft zichtbaar%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uw tapijt is meerdere malen %28intensief%29 geklopt%2C beste resultaat zonder de vezel of het tapijt te beschadigen%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vlekken%2FVerkleuringen hebben extra behandeling gehad maar blijven zichtbaar%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reden_geannuleerd__c</picklist>
+        <values>
+            <fullName>Anders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kan niet gereinigd worden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Klant vindt het te lang duren</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Klant wil teveel garanties</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Te groot%2Fzwaar%2C kon het niet meekrijgen</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Soort__c</picklist>
+        <values>
+            <fullName>- Afghaans tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- Chinees tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- Gabbeh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- Marokkaanse Berber</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- Nain</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- Nepal tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- Pakistaans tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- Synthetisch Shaggy tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- Synthetisch kortpolig tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>- Ziegler tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Afvoeren</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Berber tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bolletjes tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eetkamerstoel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fauteuil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Groene %2F Antislip rug</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Handgetuft tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hocker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hoogpolig tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>India getuft tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inloopmat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Katoenen tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kelim tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kussen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Louis de Poortere tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machinaal pers tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machinaal wol tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mat boot%2Fcaravan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oosters tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opslagkosten</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Patchwork tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Perzisch tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Profilo V</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stoel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Synthetisch tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vintage tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Viscose tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vlies Plus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wol dik tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wol tapijt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zijde tapijt</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Afgeleverd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drogen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geannuleerd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Nabehandeling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Reparatie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Vriezer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In bus</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ingepakt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Klaar voor Kloppen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Klaar voor Reinigen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Klaar voor Voorinspectie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Klaargelegd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opgehaald</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Randen Plakken</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Upsale__c</picklist>
+        <values>
+            <fullName>Anti Allergie %2810%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anti Mot Invriezen %2810%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hele Dienst%2FProduct %2810%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Huisdier Compleet %2820%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inpakken Opslag %2810%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nee</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Ontgeuren %2810%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overig %2810%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overig %2820%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reiniging %26 Protect %2820%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reparatie Rand %2810%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vlekkenbaas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waterschade %2810%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zijde Behandeling %2810%25%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Voorinspectie__c</picklist>
+        <values>
+            <fullName>%28Oude%29 Motschade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>De huidige schade aan het tapijt kan toenemen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>De randen aan de achterkant van het vloerkleed laat op verschillende plekken los%2E Dit kan door de reiniging erger worden%2E Wij kunnen deze opnieuw voor u lijmen%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Diep vuil kan niet verwijderd worden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Enkele vlekken kunnen zichtbaar blijven%2E Waar nodig zullen wij deze extra behandelen om tot een zo goed mogelijk resultaat te kunnen komen%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franje beschadigd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franje verkleurd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gat%28en%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geen bijzonderheden%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geen garantie op vlekken en%2Fof verkleuringen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gele verkleuringen blijven zichtbaar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Getuft vloerkleed%2C latex backing is oorzaak poeder%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geur van de latex backing kan niet verwijderd worden%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kan meer gaan pluizen%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kleuruitloop waargenomen%2C dit zal zichtbaar blijven%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Korte zijde beschadigd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lange zijde beschadigd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lichte slijtage door gebruik%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lichte verkleuringen zullen zichtbaar blijven</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Looppad zal zichtbaar blijven%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pootafdrukken kunnen zichtbaar blijven</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slijtage franje</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slijtage gefestonneerde randen%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slijtage zal zichtbaar blijven%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sterk vervuild</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sterke geur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tapijt hobbelt%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tapijt loopt niet recht</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veel zand in het tapijt%2C we gaan proberen zoveel mogelijk eruit te kloppen zonder het tapijt %28verder%29 te beschadigen%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zwakke rug</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

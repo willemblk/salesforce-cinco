@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Selectie_Producttype__c</fullName>
+    <externalId>false</externalId>
+    <label>Selectie Producttype</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Primair</fullName>
+                <default>false</default>
+                <label>Primair</label>
+            </value>
+            <value>
+                <fullName>Pakket</fullName>
+                <default>false</default>
+                <label>Pakket</label>
+            </value>
+            <value>
+                <fullName>Optie</fullName>
+                <default>false</default>
+                <label>Optie</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

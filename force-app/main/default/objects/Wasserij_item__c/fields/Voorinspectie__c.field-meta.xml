@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Voorinspectie__c</fullName>
+    <externalId>false</externalId>
+    <label>Voorinspectie</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Looppad zal zichtbaar blijven.</fullName>
+                <default>false</default>
+                <label>Looppad zal extra behandeld worden, maar kan zichtbaar blijven.</label>
+            </value>
+            <value>
+                <fullName>Slijtage zal zichtbaar blijven.</fullName>
+                <default>false</default>
+                <label>Slijtage, voornamelijk door gebruik, zal zichtbaar blijven.</label>
+            </value>
+            <value>
+                <fullName>Tapijt loopt niet recht</fullName>
+                <default>false</default>
+                <label>Tapijt loopt niet recht</label>
+            </value>
+            <value>
+                <fullName>Gele verkleuringen blijven zichtbaar</fullName>
+                <default>false</default>
+                <label>Gele verkleuringen blijven zichtbaar</label>
+            </value>
+            <value>
+                <fullName>Kan meer gaan pluizen.</fullName>
+                <default>false</default>
+                <label>Kan meer gaan pluizen.</label>
+            </value>
+            <value>
+                <fullName>Diep vuil kan niet verwijderd worden</fullName>
+                <default>false</default>
+                <label>Diep vuil kan niet verwijderd worden.</label>
+            </value>
+            <value>
+                <fullName>Tapijt hobbelt.</fullName>
+                <default>false</default>
+                <label>Tapijt hobbelt.</label>
+            </value>
+            <value>
+                <fullName>De randen aan de achterkant van het vloerkleed laat op verschillende plekken los. Dit kan door de reiniging erger worden. Wij kunnen deze opnieuw voor u lijmen.</fullName>
+                <default>false</default>
+                <label>De randen aan de achterkant van het vloerkleed laat op verschillende plekken los. Dit kan door de reiniging erger worden. Wij kunnen deze opnieuw voor u lijmen.</label>
+            </value>
+            <value>
+                <fullName>Slijtage gefestonneerde randen.</fullName>
+                <default>false</default>
+                <label>Slijtage gefestonneerde randen.</label>
+            </value>
+            <value>
+                <fullName>Lichte slijtage door gebruik.</fullName>
+                <default>false</default>
+                <label>Lichte slijtage door gebruik.</label>
+            </value>
+            <value>
+                <fullName>Geur van de latex backing kan niet verwijderd worden.</fullName>
+                <default>false</default>
+                <label>Geur van de latex backing kan niet verwijderd worden.</label>
+            </value>
+            <value>
+                <fullName>Getuft vloerkleed, latex backing is oorzaak poeder.</fullName>
+                <default>false</default>
+                <label>Getuft vloerkleed, latex backing is oorzaak poeder.</label>
+            </value>
+            <value>
+                <fullName>Enkele vlekken kunnen zichtbaar blijven. Waar nodig zullen wij deze extra behandelen om tot een zo goed mogelijk resultaat te kunnen komen.</fullName>
+                <default>false</default>
+                <label>Enkele vlekken en/of verkleuringen kunnen zichtbaar blijven. Waar nodig zullen wij deze extra behandelen om tot een zo goed mogelijk resultaat te kunnen komen.</label>
+            </value>
+            <value>
+                <fullName>Kleuruitloop waargenomen, dit zal zichtbaar blijven.</fullName>
+                <default>false</default>
+                <label>Kleuruitloop waargenomen, dit zal zichtbaar blijven.</label>
+            </value>
+            <value>
+                <fullName>Geen bijzonderheden.</fullName>
+                <default>false</default>
+                <label>Geen bijzonderheden.</label>
+            </value>
+            <value>
+                <fullName>Slijtage franje</fullName>
+                <default>false</default>
+                <label>Slijtage franje</label>
+            </value>
+            <value>
+                <fullName>Geen garantie op vlekken en/of verkleuringen</fullName>
+                <default>false</default>
+                <label>Geen garantie op vlekken en/of verkleuringen</label>
+            </value>
+            <value>
+                <fullName>Pootafdrukken kunnen zichtbaar blijven</fullName>
+                <default>false</default>
+                <label>Pootafdrukken kunnen zichtbaar blijven</label>
+            </value>
+            <value>
+                <fullName>Lichte verkleuringen zullen zichtbaar blijven</fullName>
+                <default>false</default>
+                <label>Lichte verkleuringen zullen zichtbaar blijven</label>
+            </value>
+            <value>
+                <fullName>Veel zand in het tapijt, we gaan proberen zoveel mogelijk eruit te kloppen zonder het tapijt (verder) te beschadigen.</fullName>
+                <default>false</default>
+                <label>Veel zand in het tapijt, we gaan proberen zoveel mogelijk eruit te kloppen zonder het tapijt (verder) te beschadigen.</label>
+            </value>
+            <value>
+                <fullName>Sterk vervuild</fullName>
+                <default>false</default>
+                <label>Sterk vervuild</label>
+            </value>
+            <value>
+                <fullName>Sterke geur</fullName>
+                <default>false</default>
+                <label>Sterke geur</label>
+            </value>
+            <value>
+                <fullName>(Oude) Motschade</fullName>
+                <default>false</default>
+                <label>(Oude) Motschade</label>
+            </value>
+            <value>
+                <fullName>Gat(en)</fullName>
+                <default>false</default>
+                <label>Gat(en)</label>
+            </value>
+            <value>
+                <fullName>Franje beschadigd</fullName>
+                <default>false</default>
+                <label>Franje beschadigd</label>
+            </value>
+            <value>
+                <fullName>Franje verkleurd</fullName>
+                <default>false</default>
+                <label>Franje verkleurd</label>
+            </value>
+            <value>
+                <fullName>Zwakke rug</fullName>
+                <default>false</default>
+                <label>Zwakke rug</label>
+            </value>
+            <value>
+                <fullName>Lange zijde beschadigd</fullName>
+                <default>false</default>
+                <label>Lange zijde beschadigd</label>
+            </value>
+            <value>
+                <fullName>Korte zijde beschadigd</fullName>
+                <default>false</default>
+                <label>Korte zijde beschadigd</label>
+            </value>
+            <value>
+                <fullName>De huidige schade aan het tapijt kan toenemen</fullName>
+                <default>false</default>
+                <label>De huidige schade aan het tapijt kan toenemen</label>
+            </value>
+            <value>
+                <fullName>Getuft vloerkleed, latex backing is oorzaak geur.</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Getuft vloerkleed, latex backing is oorzaak geur.</label>
+            </value>
+            <value>
+                <fullName>Getuft vloerkleed, latex backing is oorzaak geur/poeder.</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Getuft vloerkleed, latex backing is oorzaak geur/poeder.</label>
+            </value>
+            <value>
+                <fullName>Lichte krimp kan voorkomen.</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lichte krimp kan voorkomen.</label>
+            </value>
+            <value>
+                <fullName>Loop gedeelte/slijtage zal zichtbaar blijven</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Loop gedeelte/slijtage zal zichtbaar blijven.</label>
+            </value>
+            <value>
+                <fullName>NIET WASSEN</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NIET WASSEN</label>
+            </value>
+            <value>
+                <fullName>Niet kleurecht.</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Niet kleurecht.</label>
+            </value>
+            <value>
+                <fullName>Vervuilde franjes.</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Vervuilde franjes.</label>
+            </value>
+            <value>
+                <fullName>Wolvezeltjes laten los</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Wolvezeltjes laten los</label>
+            </value>
+            <value>
+                <fullName>Zeer sterk vervuild</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Zeer sterk vervuild</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

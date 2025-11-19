@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mobile_format_validatie</fullName>
+    <active>false</active>
+    <errorConditionFormula>!REGEX(PersonMobilePhone,&quot;^\\+?[1-9]\\d{1,14}$&quot;)</errorConditionFormula>
+    <errorDisplayField>PersonMobilePhone</errorDisplayField>
+    <errorMessage>Graag telefoonnummer in internationaal 164. format noteren. vb: +316xxx</errorMessage>
+</ValidationRule>

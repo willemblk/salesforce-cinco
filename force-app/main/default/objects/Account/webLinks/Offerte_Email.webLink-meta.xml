@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Offerte_Email</fullName>
+    <availability>online</availability>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Offerte Email</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>https://composer.congamerge.com
+?sessionId={!API.Session_ID}
+&amp;serverUrl={!API.Partner_Server_URL_80}
+&amp;id={!Account.Id}
+&amp;EmailToId={!Account.Id} 
+&amp;EmailBCC=standard.3867.dfd5c6566dbf@automate2.ihance.net 
+&amp;LG2=7 
+&amp;LG7=Follow+Up+{!Account.Name}
+&amp;LG4=1 
+&amp;EmailReplyToId={!$User.Id} 
+&amp;EmailUseSignature=0 
+&amp;CurrencyCulture=nl-NL</url>
+</WebLink>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Totaal_m2_vloerkleed__c</fullName>
+    <externalId>false</externalId>
+    <label>Totaal m2 vloerkleed</label>
+    <summarizedField>Wasserij_item__c.Oppervlakte_m__c</summarizedField>
+    <summaryFilterItems>
+        <field>Wasserij_item__c.Oppervlakte_m__c</field>
+        <operation>greaterThan</operation>
+        <value>1</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Wasserij_item__c.Werk_Order__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

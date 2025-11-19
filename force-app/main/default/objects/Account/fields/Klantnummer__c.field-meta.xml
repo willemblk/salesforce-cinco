@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Klantnummer__c</fullName>
+    <displayFormat>K-{00000}</displayFormat>
+    <externalId>true</externalId>
+    <label>Klantnummer</label>
+    <trackHistory>false</trackHistory>
+    <type>AutoNumber</type>
+</CustomField>

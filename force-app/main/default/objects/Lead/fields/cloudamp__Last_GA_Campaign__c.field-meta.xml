@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cloudamp__Last_GA_Campaign__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Last utm_campaign variable from Google Analytics Campaign URLs: The individual campaign name, slogan, promo code, etc. for a product.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Last utm_campaign variable from Google Analytics Campaign URLs: The individual campaign name, slogan, promo code, etc. for a product.</inlineHelpText>
+    <label>Last UTM Campaign</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

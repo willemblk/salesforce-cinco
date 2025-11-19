@@ -1,0 +1,3 @@
+- [x] Identify where BTW fields handled for Opportunity lines and why missing.
+- [x] Implement fix to write BTW__c/BTW_Bedrag__c/Totaal_incl_BTW__c for OpportunityLineItem.
+- [ ] Add/adjust tests or scripts if needed to cover BTW on Opportunity pricing.

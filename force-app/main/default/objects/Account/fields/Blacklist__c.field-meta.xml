@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blacklist__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Klanten waar we geen zaken meer mee wensen te doen omdat deze zich onredelijk tegen ons hebben gedragen.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Klanten waar we geen zaken meer mee wensen te doen omdat deze zich onredelijk tegen ons hebben gedragen.</inlineHelpText>
+    <label>Blacklist</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

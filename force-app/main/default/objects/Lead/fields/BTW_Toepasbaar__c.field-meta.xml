@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BTW_Toepasbaar__c</fullName>
+    <description>When the Answer is Yes VAT will be calculated based on the price that is set on the product</description>
+    <externalId>false</externalId>
+    <label>BTW Toepasbaar</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ja</fullName>
+                <default>false</default>
+                <label>Ja</label>
+            </value>
+            <value>
+                <fullName>Nee</fullName>
+                <default>false</default>
+                <label>Nee</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Extra_behandelingen__c</fullName>
+    <description>Used to show related products</description>
+    <externalId>false</externalId>
+    <label>Extra behandelingen</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Basisreiniging</fullName>
+                <default>false</default>
+                <label>Basisreiniging</label>
+            </value>
+            <value>
+                <fullName>Reiniging &amp; Protect</fullName>
+                <default>false</default>
+                <label>Reiniging &amp; Protect</label>
+            </value>
+            <value>
+                <fullName>Huisdier Compleet</fullName>
+                <default>false</default>
+                <label>Huisdier Compleet</label>
+            </value>
+            <value>
+                <fullName>Ontgeuren Overig (geen urine)</fullName>
+                <default>false</default>
+                <label>Ontgeuren Overig (geen urine)</label>
+            </value>
+            <value>
+                <fullName>Ontgeuren</fullName>
+                <default>false</default>
+                <label>Ontgeuren</label>
+            </value>
+            <value>
+                <fullName>Inpakken voor opslag</fullName>
+                <default>false</default>
+                <label>Inpakken voor opslag</label>
+            </value>
+            <value>
+                <fullName>Reparatie Rand</fullName>
+                <default>false</default>
+                <label>Reparatie Rand</label>
+            </value>
+            <value>
+                <fullName>Zijde Behandeling</fullName>
+                <default>false</default>
+                <label>Zijde Behandeling</label>
+            </value>
+            <value>
+                <fullName>Waterschade</fullName>
+                <default>false</default>
+                <label>Waterschade</label>
+            </value>
+            <value>
+                <fullName>Met losse kussens</fullName>
+                <default>false</default>
+                <label>Met losse kussens</label>
+            </value>
+            <value>
+                <fullName>Spoedbehandeling</fullName>
+                <default>false</default>
+                <label>Spoedbehandeling</label>
+            </value>
+            <value>
+                <fullName>Anti Allergie Behandeling</fullName>
+                <default>false</default>
+                <label>Anti Allergie Behandeling</label>
+            </value>
+            <value>
+                <fullName>Anti Mot Behandeling</fullName>
+                <default>false</default>
+                <label>Anti Mot Behandeling</label>
+            </value>
+            <value>
+                <fullName>Inpakken plastic</fullName>
+                <default>false</default>
+                <label>Inpakken plastic</label>
+            </value>
+            <value>
+                <fullName>Impregneren</fullName>
+                <default>false</default>
+                <label>Impregneren</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

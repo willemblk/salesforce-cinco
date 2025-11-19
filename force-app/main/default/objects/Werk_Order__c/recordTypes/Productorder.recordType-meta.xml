@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Productorder</fullName>
+    <active>true</active>
+    <label>Productorder</label>
+    <picklistValues>
+        <picklist>BTW_Toepasbaar__c</picklist>
+        <values>
+            <fullName>Ja</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nee</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Betaling_ontvangen_per__c</picklist>
+        <values>
+            <fullName>Bankrekening</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meerdere betaalmethoden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Niet ontvangen</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Pin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QR Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webshop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iDEAL</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Betalingstermijn__c</picklist>
+        <values>
+            <fullName>14 dagen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30 dagen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>45 dagen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 dagen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 dagen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bij oplevering</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Betalingswijze__c</picklist>
+        <values>
+            <fullName>Contant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contant%2FPin</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Factuur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ideal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pin</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Grootboek__c</picklist>
+        <values>
+            <fullName>Onderhoudsprogramma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verkoop Bedrijven</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verkoop Handel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verkoop Hotels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verkoop Onderaanneming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verkoop Particulier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verkoop Specialistisch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verkoop Wasserij</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Klacht__c</picklist>
+        <values>
+            <fullName>Ja</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nee</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Klacht_in_behandeling_door__c</picklist>
+        <values>
+            <fullName>Albert Blok</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mark Bolding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paul Reiding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Willem Blok</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Opmerkingen_Chauffeur__c</picklist>
+        <values>
+            <fullName>Diep vuil kan niet worden verwijderd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geen bijzonderheden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Getuft kleed%2C latex backing is oorzaak geur%2Fpoeder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Huisdierongeluk hond</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Huisdierongeluk kat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kan meer gaan pluizen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Klant niet thuis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Looppad kan zichtbaar blijven</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slijtage blijft zichtbaar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vlekken%2Fverkleuringen kunnen zichtbaar blijven namelijk%3A</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reden_Annulering__c</picklist>
+        <values>
+            <fullName>Anders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duurt te lang</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duurt te lang voor inplannen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geen reactie bij inplannen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kan niet gereinigd worden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kan niet gereinigd worden %28leer %2F plantaardig%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proefreiniging niet akkoord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teveel garanties</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reden_Klacht__c</picklist>
+        <values>
+            <fullName>Algemeen vuil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Anders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cinco schade veroorzaakt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Franje</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geparfurmeerde geur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geur</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kleuruitloop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Looppad</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Los vuil</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pluis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vlekken</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reinigen__c</picklist>
+        <values>
+            <fullName>matras</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>meubels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>overig</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>vast tapijt</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Route_ophalen_voorstel__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Werk_Order_Status__c</picklist>
+        <values>
+            <fullName>Geannuleerd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Klaarmaken verzending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Terugbetaald</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Verzonden</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wachtend op betaling</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Bron__c</fullName>
+  <label>Bron</label>
+  <type>Picklist</type>
+  <valueSet>
+    <valueSetDefinition>
+      <sorted>false</sorted>
+      <value>
+        <fullName>Klant-upload</fullName>
+        <default>false</default>
+        <label>Klant-upload</label>
+      </value>
+      <value>
+        <fullName>Formulier</fullName>
+        <default>true</default>
+        <label>Formulier</label>
+      </value>
+      <value>
+        <fullName>Intern</fullName>
+        <default>false</default>
+        <label>Intern</label>
+      </value>
+      <value>
+        <fullName>Partner-upload</fullName>
+        <default>false</default>
+        <label>Partner-upload</label>
+      </value>
+      <value>
+        <fullName>API</fullName>
+        <default>false</default>
+        <label>API</label>
+      </value>
+    </valueSetDefinition>
+    <restricted>true</restricted>
+  </valueSet>
+</CustomField>

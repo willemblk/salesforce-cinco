@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Voorinspectie_Opmerkingen__c</fullName>
+    <description>Komt in de voorinspectie mail te staan die naar de klant wordt verstuurd.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Komt in de voorinspectie mail te staan die naar de klant wordt verstuurd.</inlineHelpText>
+    <label>Voorinspectie Opmerkingen</label>
+    <length>10000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

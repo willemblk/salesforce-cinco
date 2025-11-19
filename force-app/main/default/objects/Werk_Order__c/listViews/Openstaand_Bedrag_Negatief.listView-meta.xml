@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Openstaand_Bedrag_Negatief</fullName>
+    <columns>NAME</columns>
+    <columns>Openstaand_Bedrag__c</columns>
+    <columns>Afleveren_Vanaf_Datum__c</columns>
+    <columns>Ophalen_vanaf__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Openstaand_Bedrag__c</field>
+        <operation>lessThan</operation>
+        <value>0</value>
+    </filters>
+    <label>Openstaand Bedrag Negatief</label>
+</ListView>

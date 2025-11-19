@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>companycam__Initiate_CompanyCam_Project</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Create as Project in CompanyCam</masterLabel>
+    <openType>noSidebar</openType>
+    <page>companycam__CompanyCamProjectInit_Account</page>
+    <protected>false</protected>
+</WebLink>

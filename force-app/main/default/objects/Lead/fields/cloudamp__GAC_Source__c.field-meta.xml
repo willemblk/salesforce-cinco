@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cloudamp__GAC_Source__c</fullName>
+    <deprecated>false</deprecated>
+    <description>No longer in use: Source data from the Google Analytics Cookie</description>
+    <externalId>false</externalId>
+    <inlineHelpText>No longer in use: Source data from the Google Analytics Cookie</inlineHelpText>
+    <label>Not in use - GAC Source</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

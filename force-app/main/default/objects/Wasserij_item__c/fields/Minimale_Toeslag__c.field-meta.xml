@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Minimale_Toeslag__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When Filled this is a Mini male toeslag product. This field is filled by a flow when that product is created. This field is used to exclude the product from roll up summary.</description>
+    <externalId>false</externalId>
+    <label>Minimale Toeslag</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

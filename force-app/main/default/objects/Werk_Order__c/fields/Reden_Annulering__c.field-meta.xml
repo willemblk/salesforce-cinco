@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reden_Annulering__c</fullName>
+    <externalId>false</externalId>
+    <label>Reden Annulering</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Kan niet gereinigd worden (leer / plantaardig)</fullName>
+                <default>false</default>
+                <label>Kan niet gereinigd worden (leer / plantaardig)</label>
+            </value>
+            <value>
+                <fullName>Proefreiniging niet akkoord</fullName>
+                <default>false</default>
+                <label>Proefreiniging niet akkoord</label>
+            </value>
+            <value>
+                <fullName>Duurt te lang voor inplannen</fullName>
+                <default>false</default>
+                <label>Duurt te lang voor inplannen</label>
+            </value>
+            <value>
+                <fullName>Anders</fullName>
+                <default>false</default>
+                <label>Anders</label>
+            </value>
+            <value>
+                <fullName>Kan niet gereinigd worden</fullName>
+                <default>false</default>
+                <label>Kan niet gereinigd worden</label>
+            </value>
+            <value>
+                <fullName>Teveel garanties</fullName>
+                <default>false</default>
+                <label>Teveel garanties</label>
+            </value>
+            <value>
+                <fullName>Duurt te lang</fullName>
+                <default>false</default>
+                <label>Duurt te lang</label>
+            </value>
+            <value>
+                <fullName>Geen reactie bij inplannen</fullName>
+                <default>false</default>
+                <label>Geen reactie bij inplannen</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

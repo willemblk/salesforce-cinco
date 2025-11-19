@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Wasserij_Record_type_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(And(RecordType.Name = &quot;SR&quot;,Werk_Order__r.RecordType.Name = &quot;Wasserij&quot;),And(RecordType.Name = &quot;Wasserij&quot;,Werk_Order__r.RecordType.Name = &quot;Uitvoering&quot;))</errorConditionFormula>
+    <errorMessage>Please select the Correct Record type</errorMessage>
+</ValidationRule>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Niet afgeleverd</fullName>
+                <default>false</default>
+                <label>Niet afgeleverd</label>
+            </value>
+            <value>
+                <fullName>Opgehaald</fullName>
+                <default>false</default>
+                <label>Opgehaald</label>
+            </value>
+            <value>
+                <fullName>Geannuleerd</fullName>
+                <default>false</default>
+                <label>Geannuleerd</label>
+            </value>
+            <value>
+                <fullName>Klaar voor Voorinspectie</fullName>
+                <default>false</default>
+                <label>Klaar voor Voorinspectie</label>
+            </value>
+            <value>
+                <fullName>In Vriezer</fullName>
+                <default>false</default>
+                <label>In Vriezer</label>
+            </value>
+            <value>
+                <fullName>Klaar voor Kloppen</fullName>
+                <default>false</default>
+                <label>Klaar voor Kloppen</label>
+            </value>
+            <value>
+                <fullName>Klaar voor Reinigen</fullName>
+                <default>false</default>
+                <label>Klaar voor Reinigen</label>
+            </value>
+            <value>
+                <fullName>Drogen</fullName>
+                <default>false</default>
+                <label>Drogen</label>
+            </value>
+            <value>
+                <fullName>Randen Plakken</fullName>
+                <default>false</default>
+                <label>Randen Plakken</label>
+            </value>
+            <value>
+                <fullName>In Reparatie</fullName>
+                <default>false</default>
+                <label>In Reparatie</label>
+            </value>
+            <value>
+                <fullName>In Nabehandeling</fullName>
+                <default>false</default>
+                <label>In Nabehandeling</label>
+            </value>
+            <value>
+                <fullName>Ingepakt</fullName>
+                <default>false</default>
+                <label>Ingepakt</label>
+            </value>
+            <value>
+                <fullName>Klaargelegd</fullName>
+                <default>false</default>
+                <label>Klaargelegd</label>
+            </value>
+            <value>
+                <fullName>In bus</fullName>
+                <default>false</default>
+                <label>In bus</label>
+            </value>
+            <value>
+                <fullName>Afgeleverd</fullName>
+                <default>false</default>
+                <label>Afgeleverd</label>
+            </value>
+            <value>
+                <fullName>In Reparatie EX</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>In Reparatie EX</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Navigeer__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(
+&quot;https://www.google.com/maps/place/&quot; +
+IF(
+OR(TEXT(Werk_Order_Status__c) = &quot;Ophalen ingepland&quot;, TEXT(Werk_Order_Status__c) = &quot;Opgehaald&quot;, TEXT(Werk_Order_Status__c) = &quot;Ophaling ingepland&quot;),
+Ophaaladres1__Street__s + &quot;,&quot; + Ophaaladres1__PostalCode__s + &quot;,&quot; + Ophaaladres1__City__s,
+IF(
+OR(TEXT(Werk_Order_Status__c) = &quot;Terugbrengen ingepland&quot;, TEXT(Werk_Order_Status__c) = &quot;Teruggebracht&quot;, TEXT(Werk_Order_Status__c) = &quot;Levering ingepland&quot;),
+Afleveradres1__Street__s + &quot;,&quot; + Afleveradres1__PostalCode__s + &quot;,&quot; + Afleveradres1__City__s,
+IF(
+TEXT(Werk_Order_Status__c) = &quot;Ingepland&quot;,
+Projectadres1__Street__s + &quot;,&quot; + Projectadres1__PostalCode__s + &quot;,&quot; + Projectadres1__City__s,
+IF(
+ISBLANK(Account__r.PersonContact.MailingStreet),
+Account__r.ShippingStreet,
+Account__r.PersonContact.MailingStreet
+) + &quot;,&quot; +
+IF(
+ISBLANK(Account__r.PersonContact.MailingCity),
+Account__r.ShippingCity,
+Account__r.PersonContact.MailingCity
+)
+)
+)
+),
+IF(
+OR(TEXT(Werk_Order_Status__c) = &quot;Ophalen ingepland&quot;, TEXT(Werk_Order_Status__c) = &quot;Opgehaald&quot;, TEXT(Werk_Order_Status__c) = &quot;Ophaling ingepland&quot;),
+Ophaaladres1__Street__s + BR() + Ophaaladres1__PostalCode__s + &quot; &quot;+ Ophaaladres1__City__s,
+IF(
+OR(TEXT(Werk_Order_Status__c) = &quot;Terugbrengen ingepland&quot;, TEXT(Werk_Order_Status__c) = &quot;Teruggebracht&quot;, TEXT(Werk_Order_Status__c) = &quot;Levering ingepland&quot;),
+Afleveradres1__Street__s + BR() + Afleveradres1__PostalCode__s +&quot; &quot;+ Afleveradres1__City__s,
+IF(
+OR(TEXT(Werk_Order_Status__c) = &quot;Ingepland&quot;, TEXT(Werk_Order_Status__c) = &quot;Afgerond&quot;),
+Projectadres1__Street__s + BR() + Projectadres1__PostalCode__s +&quot; &quot;+ Projectadres1__City__s,
+&quot;Navigeer&quot;
+)
+)
+)
+, &quot;Open in Google Maps&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Navigeer</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cloudamp__GA_Content__c</fullName>
+    <deprecated>false</deprecated>
+    <description>utm_content variable from Google Analytics Campaign URLs: Used to differentiate similar content, or links within the same ad. For example, if you have two call-to-action links within the same email message, you can use utm_content and set different values for each so you can tell which version is more effective.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>utm_content variable from Google Analytics Campaign URLs: Used to differentiate similar content, or links within the same ad.</inlineHelpText>
+    <label>First UTM Content</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

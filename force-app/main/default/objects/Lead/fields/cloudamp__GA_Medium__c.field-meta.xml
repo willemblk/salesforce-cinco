@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cloudamp__GA_Medium__c</fullName>
+    <deprecated>false</deprecated>
+    <description>utm_medium variable from Google Analytics Campaign URLs: The advertising or marketing medium, e.g.: cpc, banner, email newsletter.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>utm_medium variable from Google Analytics Campaign URLs: The advertising or marketing medium, e.g.: cpc, banner, email newsletter.</inlineHelpText>
+    <label>First UTM Medium</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

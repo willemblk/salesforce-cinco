@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Gebieden__c</fullName>
+    <externalId>false</externalId>
+    <label>Gebieden</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Vloerkleed</fullName>
+                <default>false</default>
+                <label>Vloerkleed</label>
+            </value>
+            <value>
+                <fullName>SR Particulier</fullName>
+                <default>false</default>
+                <label>SR Particulier</label>
+            </value>
+            <value>
+                <fullName>SofaSaver</fullName>
+                <default>false</default>
+                <label>SofaSaver</label>
+            </value>
+            <value>
+                <fullName>De Meubelreiniger</fullName>
+                <default>false</default>
+                <label>De Meubelreiniger</label>
+            </value>
+            <value>
+                <fullName>Mr. Kools</fullName>
+                <default>false</default>
+                <label>Mr. Kools</label>
+            </value>
+            <value>
+                <fullName>Bright &amp; Clean</fullName>
+                <default>false</default>
+                <label>Bright &amp; Clean</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

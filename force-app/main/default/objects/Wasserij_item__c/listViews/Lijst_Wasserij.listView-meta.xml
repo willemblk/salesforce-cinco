@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lijst_Wasserij</fullName>
+    <columns>NAME</columns>
+    <columns>Soort__c</columns>
+    <columns>Extra_behandelingen__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Lijst Wasserij</label>
+    <sharedTo>
+        <group>Kantoor</group>
+    </sharedTo>
+</ListView>

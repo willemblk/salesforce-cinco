@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Merk__c</fullName>
+    <externalId>false</externalId>
+    <label>Merk</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Louis de Poortere</fullName>
+                <default>false</default>
+                <label>Louis de Poortere</label>
+            </value>
+            <value>
+                <fullName>Brink &amp; Campman</fullName>
+                <default>false</default>
+                <label>Brink &amp; Campman</label>
+            </value>
+            <value>
+                <fullName>Brinker</fullName>
+                <default>false</default>
+                <label>Brinker</label>
+            </value>
+            <value>
+                <fullName>De Munk Carpets</fullName>
+                <default>false</default>
+                <label>De Munk Carpets</label>
+            </value>
+            <value>
+                <fullName>Desso</fullName>
+                <default>false</default>
+                <label>Desso</label>
+            </value>
+            <value>
+                <fullName>Mart Visser</fullName>
+                <default>false</default>
+                <label>Mart Visser</label>
+            </value>
+            <value>
+                <fullName>Rugvista</fullName>
+                <default>false</default>
+                <label>Rugvista</label>
+            </value>
+            <value>
+                <fullName>Fraai</fullName>
+                <default>false</default>
+                <label>Fraai</label>
+            </value>
+            <value>
+                <fullName>Moooi Carpets</fullName>
+                <default>false</default>
+                <label>Moooi Carpets</label>
+            </value>
+            <value>
+                <fullName>HKliving</fullName>
+                <default>false</default>
+                <label>HKliving</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

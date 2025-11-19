@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prijsmodel__c</fullName>
+    <externalId>false</externalId>
+    <label>Prijsmodel</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Per m²</fullName>
+                <default>false</default>
+                <label>Per m²</label>
+            </value>
+            <value>
+                <fullName>Per stuk</fullName>
+                <default>false</default>
+                <label>Per stuk</label>
+            </value>
+            <value>
+                <fullName>Per zitplaats</fullName>
+                <default>false</default>
+                <label>Per zitplaats</label>
+            </value>
+            <value>
+                <fullName>Per uur</fullName>
+                <default>false</default>
+                <label>Per uur</label>
+            </value>
+            <value>
+                <fullName>Vast bedrag</fullName>
+                <default>false</default>
+                <label>Vast bedrag</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

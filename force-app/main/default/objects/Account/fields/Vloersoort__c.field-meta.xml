@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vloersoort__c</fullName>
+    <externalId>false</externalId>
+    <label>Vloersoort</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Vast tapijt</fullName>
+                <default>false</default>
+                <label>Vast tapijt</label>
+            </value>
+            <value>
+                <fullName>Laminaat</fullName>
+                <default>false</default>
+                <label>Laminaat</label>
+            </value>
+            <value>
+                <fullName>PVC</fullName>
+                <default>false</default>
+                <label>PVC</label>
+            </value>
+            <value>
+                <fullName>Vinyl</fullName>
+                <default>false</default>
+                <label>Vinyl</label>
+            </value>
+            <value>
+                <fullName>Hout</fullName>
+                <default>false</default>
+                <label>Hout</label>
+            </value>
+            <value>
+                <fullName>Tegel</fullName>
+                <default>false</default>
+                <label>Tegel</label>
+            </value>
+            <value>
+                <fullName>Lino</fullName>
+                <default>false</default>
+                <label>Lino</label>
+            </value>
+            <value>
+                <fullName>Grind</fullName>
+                <default>false</default>
+                <label>Grind</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Niet_emailen_del__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Persoon wil geen emails meer ontvangen.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Persoon wil geen emails van ons ontvangen.</inlineHelpText>
+    <label>Niet emailen</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reden_Klacht__c</fullName>
+    <externalId>false</externalId>
+    <label>Oorzaak klacht</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Los vuil</fullName>
+                <default>false</default>
+                <label>Los vuil</label>
+            </value>
+            <value>
+                <fullName>Vlekken</fullName>
+                <default>false</default>
+                <label>Vlekken</label>
+            </value>
+            <value>
+                <fullName>Looppad</fullName>
+                <default>false</default>
+                <label>Looppad</label>
+            </value>
+            <value>
+                <fullName>Geur</fullName>
+                <default>false</default>
+                <label>Geur</label>
+            </value>
+            <value>
+                <fullName>Pluis</fullName>
+                <default>false</default>
+                <label>Pluis</label>
+            </value>
+            <value>
+                <fullName>Geparfurmeerde geur</fullName>
+                <default>false</default>
+                <label>Geparfurmeerde geur</label>
+            </value>
+            <value>
+                <fullName>Algemeen vuil</fullName>
+                <default>false</default>
+                <label>Algemeen vuil</label>
+            </value>
+            <value>
+                <fullName>Cinco schade veroorzaakt</fullName>
+                <default>false</default>
+                <label>Cinco schade veroorzaakt</label>
+            </value>
+            <value>
+                <fullName>Kleuruitloop</fullName>
+                <default>false</default>
+                <label>Kleuruitloop</label>
+            </value>
+            <value>
+                <fullName>Franje</fullName>
+                <default>false</default>
+                <label>Franje</label>
+            </value>
+            <value>
+                <fullName>Anders</fullName>
+                <default>false</default>
+                <label>Anders</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

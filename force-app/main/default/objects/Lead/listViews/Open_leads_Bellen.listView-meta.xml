@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_leads_Bellen</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>Offerte_Bellen_Status__c</columns>
+    <columns>Beantwoord__c</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Offerte_Bellen_Status__c</field>
+        <operation>equals</operation>
+        <value>3. Bellen</value>
+    </filters>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Niet gereageerd: Open,Gereageerd: Komt er snel op terug</value>
+    </filters>
+    <label>Open leads - Bellen</label>
+    <sharedTo>
+        <group>Kantoor</group>
+    </sharedTo>
+</ListView>

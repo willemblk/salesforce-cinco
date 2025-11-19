@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Exactly_One_Parent_VR</fullName>
+  <active>true</active>
+  <errorConditionFormula>(
+    IF(NOT(ISBLANK(Lead__c)), 1, 0) +
+    IF(NOT(ISBLANK(Opportunity__c)), 1, 0) +
+  IF(NOT(ISBLANK(Werk_Order1__c)), 1, 0) +
+    IF(NOT(ISBLANK(OpportunityLineItem__c)), 1, 0) +
+    IF(NOT(ISBLANK(Wasserij_item__c)), 1, 0) +
+    IF(NOT(ISBLANK(Lead_Product__c)), 1, 0)
+  ) &lt;&gt; 1</errorConditionFormula>
+  <errorMessage>Koppel een foto aan precies één record (Lead, Opportunity, Werkorder, Opp Product of WO Product).</errorMessage>
+</ValidationRule>

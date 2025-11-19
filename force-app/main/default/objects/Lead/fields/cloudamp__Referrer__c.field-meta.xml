@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cloudamp__Referrer__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The Referring URL that a visitor came from to arrive on your web site, prior to submitting a web-to-lead form.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Referring URL that a visitor came from to arrive on your web site, prior to submitting a web-to-lead form.</inlineHelpText>
+    <label>First Referrer</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

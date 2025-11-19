@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Offerteaanvragen_Particulier</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+    <columns>CORE.USERS.LAST_NAME</columns>
+    <columns>FULL_NAME</columns>
+    <columns>Beantwoord__c</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>LEAD.CITY</columns>
+    <columns>LEAD.LEAD_SOURCE</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>cloudamp__GA_Medium__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Offerteaanvraag</value>
+    </filters>
+    <filters>
+        <field>LEAD.LEAD_SOURCE</field>
+        <operation>notEqual</operation>
+        <value>SR Zakelijk algemeen</value>
+    </filters>
+    <filters>
+        <field>LEAD.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Lead.Particulier</value>
+    </filters>
+    <filters>
+        <field>Beantwoord__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Offerteaanvragen Particulier</label>
+</ListView>

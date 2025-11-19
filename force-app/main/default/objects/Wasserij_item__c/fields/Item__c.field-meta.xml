@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Item__c</fullName>
+    <externalId>false</externalId>
+    <label>Item</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Kleed (p/m²)</fullName>
+                <default>true</default>
+                <label>Kleed (p/m²)</label>
+            </value>
+            <value>
+                <fullName>Meubel (p/zitplaats)</fullName>
+                <default>false</default>
+                <label>Meubel (p/zitplaats)</label>
+            </value>
+            <value>
+                <fullName>Kleed (wederverkoper)</fullName>
+                <default>false</default>
+                <label>Kleed (wederverkoper)</label>
+            </value>
+            <value>
+                <fullName>Tapijtreparatie CC</fullName>
+                <default>false</default>
+                <label>Tapijtreparatie CC</label>
+            </value>
+            <value>
+                <fullName>Tapijtreparatie</fullName>
+                <default>false</default>
+                <label>Tapijtreparatie</label>
+            </value>
+            <value>
+                <fullName>Ondertapijt</fullName>
+                <default>false</default>
+                <label>Ondertapijt</label>
+            </value>
+            <value>
+                <fullName>Kussen</fullName>
+                <default>false</default>
+                <label>Kussen</label>
+            </value>
+            <value>
+                <fullName>Opslaghoes</fullName>
+                <default>false</default>
+                <label>Opslaghoes</label>
+            </value>
+            <value>
+                <fullName>Opslag</fullName>
+                <default>false</default>
+                <label>Opslag</label>
+            </value>
+            <value>
+                <fullName>Afvoeren vloerkleed</fullName>
+                <default>false</default>
+                <label>Afvoeren vloerkleed</label>
+            </value>
+            <value>
+                <fullName>Onbehandeld retour</fullName>
+                <default>false</default>
+                <label>Onbehandeld retour</label>
+            </value>
+            <value>
+                <fullName>Onbehandeld - zelf ophalen</fullName>
+                <default>false</default>
+                <label>Onbehandeld - zelf ophalen</label>
+            </value>
+            <value>
+                <fullName>Toeslag Minimum Tarief Wederverkoper</fullName>
+                <default>false</default>
+                <label>Toeslag Minimum Tarief Wederverkoper</label>
+            </value>
+            <value>
+                <fullName>Stoffen Meubel</fullName>
+                <default>false</default>
+                <label>Stoffen Meubel</label>
+            </value>
+            <value>
+                <fullName>Vast tapijt</fullName>
+                <default>false</default>
+                <label>Vast tapijt</label>
+            </value>
+            <value>
+                <fullName>Matras</fullName>
+                <default>false</default>
+                <label>Matras</label>
+            </value>
+            <value>
+                <fullName>Tapijt Trap</fullName>
+                <default>false</default>
+                <label>Tapijt Trap</label>
+            </value>
+            <value>
+                <fullName>Vlekkenbaas + Vlekkendoekje</fullName>
+                <default>false</default>
+                <label>Vlekkenbaas + Vlekkendoekje</label>
+            </value>
+            <value>
+                <fullName>Vlekkenbaas</fullName>
+                <default>false</default>
+                <label>Vlekkenbaas</label>
+            </value>
+            <value>
+                <fullName>3 witte vlekkendoekjes</fullName>
+                <default>false</default>
+                <label>3 witte vlekkendoekjes</label>
+            </value>
+            <value>
+                <fullName>Bijrijdertoeslag</fullName>
+                <default>false</default>
+                <label>Bijrijdertoeslag</label>
+            </value>
+            <value>
+                <fullName>Transportkosten</fullName>
+                <default>false</default>
+                <label>Transportkosten</label>
+            </value>
+            <value>
+                <fullName>Ophaalservice binnen (max. 20 minuten)</fullName>
+                <default>false</default>
+                <label>Ophaalservice binnen (max. 20 minuten)</label>
+            </value>
+            <value>
+                <fullName>Afleverservice binnen (max. 20 minuten)</fullName>
+                <default>false</default>
+                <label>Afleverservice binnen (max. 20 minuten)</label>
+            </value>
+            <value>
+                <fullName>Fauteuil</fullName>
+                <default>false</default>
+                <label>Fauteuil</label>
+            </value>
+            <value>
+                <fullName>Zitbank</fullName>
+                <default>false</default>
+                <label>Zitbank</label>
+            </value>
+            <value>
+                <fullName>Stoel</fullName>
+                <default>false</default>
+                <label>Stoel</label>
+            </value>
+            <value>
+                <fullName>Bureaustoel</fullName>
+                <default>false</default>
+                <label>Bureaustoel</label>
+            </value>
+            <value>
+                <fullName>Vergaderstoel</fullName>
+                <default>false</default>
+                <label>Vergaderstoel</label>
+            </value>
+            <value>
+                <fullName>Theaterstoel</fullName>
+                <default>false</default>
+                <label>Theaterstoel</label>
+            </value>
+            <value>
+                <fullName>Bioscoopstoel</fullName>
+                <default>false</default>
+                <label>Bioscoopstoel</label>
+            </value>
+            <value>
+                <fullName>Gordijn</fullName>
+                <default>false</default>
+                <label>Gordijn</label>
+            </value>
+            <value>
+                <fullName>Inspectie</fullName>
+                <default>false</default>
+                <label>Inspectie</label>
+            </value>
+            <value>
+                <fullName>Vezelbeschermer Eco</fullName>
+                <default>false</default>
+                <label>Vezelbeschermer Eco</label>
+            </value>
+            <value>
+                <fullName>Anders</fullName>
+                <default>false</default>
+                <label>Anders</label>
+            </value>
+            <value>
+                <fullName>Vlekkenservice Meubel</fullName>
+                <default>false</default>
+                <label>Vlekkenservice Meubel</label>
+            </value>
+            <value>
+                <fullName>Vlekkenservice Vast Tapijt</fullName>
+                <default>false</default>
+                <label>Vlekkenservice Vast Tapijt</label>
+            </value>
+            <value>
+                <fullName>Vlekkenschijf</fullName>
+                <default>false</default>
+                <label>Vlekkenschijf</label>
+            </value>
+            <value>
+                <fullName>SofaSaver</fullName>
+                <default>false</default>
+                <label>SofaSaver</label>
+            </value>
+            <value>
+                <fullName>Reinigingsmiddel wol</fullName>
+                <default>false</default>
+                <label>Reinigingsmiddel wol</label>
+            </value>
+            <value>
+                <fullName>Reinigingsmiddel synthetisch</fullName>
+                <default>false</default>
+                <label>Reinigingsmiddel synthetisch</label>
+            </value>
+            <value>
+                <fullName>Vlekkenwonder</fullName>
+                <default>false</default>
+                <label>Vlekkenwonder</label>
+            </value>
+            <value>
+                <fullName>Vlekkenspray</fullName>
+                <default>false</default>
+                <label>Vlekkenspray</label>
+            </value>
+            <value>
+                <fullName>James Interieurspray</fullName>
+                <default>false</default>
+                <label>James Interieurspray</label>
+            </value>
+            <value>
+                <fullName>UF2000</fullName>
+                <default>false</default>
+                <label>UF2000</label>
+            </value>
+            <value>
+                <fullName>Rena Vezelbeschermer Eco</fullName>
+                <default>false</default>
+                <label>Rena Vezelbeschermer Eco</label>
+            </value>
+            <value>
+                <fullName>Rena Textiel Onderhoudspakket</fullName>
+                <default>false</default>
+                <label>Rena Textiel Onderhoudspakket</label>
+            </value>
+            <value>
+                <fullName>Vlekkenbaas + Vlekkendoekje (Aanbieding)</fullName>
+                <default>false</default>
+                <label>Vlekkenbaas + Vlekkendoekje (Aanbieding)</label>
+            </value>
+            <value>
+                <fullName>Matras Clean Spray Anti Allergie 500 ml</fullName>
+                <default>false</default>
+                <label>Matras Clean Spray Anti Allergie 500 ml</label>
+            </value>
+            <value>
+                <fullName>Matras Clean Spray Anti Allergie 750 ml</fullName>
+                <default>false</default>
+                <label>Matras Clean Spray Anti Allergie 750 ml</label>
+            </value>
+            <value>
+                <fullName>Borg SofaSaver</fullName>
+                <default>false</default>
+                <label>Borg SofaSaver</label>
+            </value>
+            <value>
+                <fullName>Stoffen Meubels</fullName>
+                <default>false</default>
+                <label>Stoffen Meubels</label>
+            </value>
+            <value>
+                <fullName>Vlekkenservice</fullName>
+                <default>false</default>
+                <label>Vlekkenservice</label>
+            </value>
+            <value>
+                <fullName>Verzending</fullName>
+                <default>false</default>
+                <label>Verzending</label>
+            </value>
+            <value>
+                <fullName>Annuleringskosten</fullName>
+                <default>false</default>
+                <label>Annuleringskosten</label>
+            </value>
+            <value>
+                <fullName>AK - Reinigen kussenset</fullName>
+                <default>false</default>
+                <label>AK - Reinigen kussenset</label>
+            </value>
+            <value>
+                <fullName>AK - Impregneren kussenset</fullName>
+                <default>false</default>
+                <label>AK - Impregneren kussenset</label>
+            </value>
+            <value>
+                <fullName>AK - Reinigen matras klein</fullName>
+                <default>false</default>
+                <label>AK - Reinigen matras klein</label>
+            </value>
+            <value>
+                <fullName>AK - Reinigen matras groot</fullName>
+                <default>false</default>
+                <label>AK - Reinigen matras groot</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

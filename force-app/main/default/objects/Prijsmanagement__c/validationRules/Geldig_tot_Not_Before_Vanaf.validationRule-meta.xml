@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Geldig_tot_Not_Before_Vanaf</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ NOT(ISBLANK( Geldig_tot__c)),
+ Geldig_tot__c&lt;  Geldig_vanaf__c 
+)</errorConditionFormula>
+    <errorDisplayField>Geldig_tot__c</errorDisplayField>
+    <errorMessage>Geldig tot mag niet voor Geldig vanaf zijn.</errorMessage>
+</ValidationRule>

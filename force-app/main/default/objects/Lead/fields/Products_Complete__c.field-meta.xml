@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Products_Complete__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used for flow Criteria filled by Zapier after a couple of minutes delay so that the products can be inserted into the lead from zapier before converting.</description>
+    <externalId>false</externalId>
+    <label>Products Complete</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

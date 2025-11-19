@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Wasserij_Item__c.Add_Foto</fullName>
+  <label>Foto toevoegen</label>
+  <description>Maak een nieuwe Foto (relatie naar Wasserij Item wordt automatisch gezet).</description>
+  <targetObject>Foto__c</targetObject>
+  <type>CreateRecord</type>
+  <optionsCreateFeedItem>false</optionsCreateFeedItem>
+  <predefinedFieldValues>
+    <name>Wasserij_item__c</name>
+    <value>{!Wasserij_Item__c.Id}</value>
+  </predefinedFieldValues>
+  <predefinedFieldValues>
+    <name>Is_Public__c</name>
+    <value>true</value>
+  </predefinedFieldValues>
+  <predefinedFieldValues>
+    <name>Bron__c</name>
+    <value>Formulier</value>
+  </predefinedFieldValues>
+</QuickAction>

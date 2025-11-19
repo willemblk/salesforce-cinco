@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Klacht_in_behandeling_door__c</fullName>
+    <externalId>false</externalId>
+    <label>Klacht in behandeling door:</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Mark Bolding</fullName>
+                <default>false</default>
+                <label>Mark Bolding</label>
+            </value>
+            <value>
+                <fullName>Paul Reiding</fullName>
+                <default>false</default>
+                <label>Paul Reiding</label>
+            </value>
+            <value>
+                <fullName>Willem Blok</fullName>
+                <default>false</default>
+                <label>Willem Blok</label>
+            </value>
+            <value>
+                <fullName>Albert Blok</fullName>
+                <default>false</default>
+                <label>Albert Blok</label>
+            </value>
+            <value>
+                <fullName>Henk de Vries</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Henk de Vries</label>
+            </value>
+            <value>
+                <fullName>Remco van Knippenberg</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Remco van Knippenberg</label>
+            </value>
+            <value>
+                <fullName>Sigrid Hazebroek</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sigrid Hazebroek</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

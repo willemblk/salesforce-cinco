@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_kleed__c</fullName>
+    <externalId>false</externalId>
+    <formula>CONTAINS(LOWER(Product__r.Name), &quot;vloerkleed&quot;) ||
+CONTAINS(LOWER(Product__r.Name), &quot;kleed&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is kleed?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

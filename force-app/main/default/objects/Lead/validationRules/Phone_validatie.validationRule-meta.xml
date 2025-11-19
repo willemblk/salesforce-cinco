@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_validatie</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+NOT(ISNEW()),
+ISCHANGED(Phone),
+(!REGEX(Phone,&quot;^\\+?[1-9]\\d{1,14}$&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>Phone</errorDisplayField>
+    <errorMessage>Graag telefoonnummer in internationaal 164 format.</errorMessage>
+</ValidationRule>

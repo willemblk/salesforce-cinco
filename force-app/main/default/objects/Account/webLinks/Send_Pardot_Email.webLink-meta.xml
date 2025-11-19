@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Pardot_Email</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Send Pardot Email</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>https://pi.pardot.com/email/create/prospect_email/{!Account.PersonEmail}?sessionid={!$Api.Session_ID}&amp;serverurl={!$Api.Partner_Server_URL_90} &amp;contact_id={!Account.PersonContactId__c}&amp;Account_id={!Account.Id}</url>
+</WebLink>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opmerkingen_voor_Aflevering__c</fullName>
+    <externalId>false</externalId>
+    <label>Opmerkingen voor Aflevering</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Vlekken/Verkleuringen hebben extra behandeling gehad maar blijven zichtbaar.</fullName>
+                <default>false</default>
+                <label>Vlekken/Verkleuringen hebben extra behandeling gehad maar blijven zichtbaar.</label>
+            </value>
+            <value>
+                <fullName>Lichte verkleuringen blijven zichtbaar.</fullName>
+                <default>false</default>
+                <label>Lichte verkleuringen blijven zichtbaar.</label>
+            </value>
+            <value>
+                <fullName>Looppad heeft extra behandeling gehad maar blijft zichtbaar.</fullName>
+                <default>false</default>
+                <label>Looppad heeft extra behandeling gehad maar blijft zichtbaar.</label>
+            </value>
+            <value>
+                <fullName>Slijtage blijft zichtbaar.</fullName>
+                <default>false</default>
+                <label>Slijtage blijft zichtbaar.</label>
+            </value>
+            <value>
+                <fullName>Geur is van kleed.</fullName>
+                <default>false</default>
+                <label>Geur is van kleed.</label>
+            </value>
+            <value>
+                <fullName>Geur komt van latex rug.</fullName>
+                <default>false</default>
+                <label>Geur komt van latex rug.</label>
+            </value>
+            <value>
+                <fullName>Best haalbare resultaat.</fullName>
+                <default>false</default>
+                <label>Best haalbare resultaat.</label>
+            </value>
+            <value>
+                <fullName>Slijtage franje blijft zichtbaar.</fullName>
+                <default>false</default>
+                <label>Slijtage franje blijft zichtbaar.</label>
+            </value>
+            <value>
+                <fullName>Diep vuil kan niet verwijderd worden zonder de vezel te beschadigen.</fullName>
+                <default>false</default>
+                <label>Diep vuil kan niet verwijderd worden zonder de vezel te beschadigen.</label>
+            </value>
+            <value>
+                <fullName>Uw tapijt is meerdere malen (intensief) geklopt, beste resultaat zonder de vezel of het tapijt te beschadigen.</fullName>
+                <default>false</default>
+                <label>Uw tapijt is meerdere malen (intensief) geklopt, beste resultaat zonder de vezel of het tapijt te beschadigen.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

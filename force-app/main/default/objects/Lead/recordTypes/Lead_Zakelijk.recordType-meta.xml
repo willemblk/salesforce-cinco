@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Zakelijk</fullName>
+    <active>true</active>
+    <businessProcess>Zakelijk</businessProcess>
+    <label>Lead Zakelijk</label>
+    <picklistValues>
+        <picklist>BTW_Toepasbaar__c</picklist>
+        <values>
+            <fullName>Ja</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nee</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Betalingstermijn__c</picklist>
+        <values>
+            <fullName>14 dagen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30 dagen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>45 dagen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 dagen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 dagen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bij oplevering</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Betalingswijze__c</picklist>
+        <values>
+            <fullName>Contant%2FPin bij oplevering of vooraf via iDEAL%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Factuur</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>Bed %26 Breakfast</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bioscoop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Horeca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hotel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instelling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kantoor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medewerker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onderwijs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overig</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Particulier</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schoonmaakorganisatie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stomerij</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Superjacht</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Theater</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uitvaart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vakantiepark</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wederverkoper wasserij</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Winkel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zorg</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Artistiek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cinco%2Enl</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>De Meubelreiniger</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Doornebal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drijfveer Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geïmporteerd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mond-tot-mond reclame</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mr%2E Kools</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overig</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SR Zakelijk algemeen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telefoon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webshop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>bankreinigen%2Enl</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>cincocleaning%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>mijnschoonhuis%2Enl</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>rozenkelim%2Enl</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>the-weavery%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>vloerkleedreinigen%2Ecom</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Meubelreiniging_status__c</picklist>
+        <values>
+            <fullName>1e beoordeling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2e beoordeling</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Aantal zitplaatsen vragen %28auto e-mail%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foto akkoord</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foto niet akkoord %28auto e-mail%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foto niet akkoord %28geen e-mail sturen%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foto niet akkoord%3A Leer %28auto e-mail%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geen foto ontvangen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offerte Akkoord - Bezig met beoordelen foto%27s</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offerte Akkoord - Foto niet akkoord %28auto e-mail%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offerte Akkoord - Geen Foto - Foto vragen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offerte Akkoord - Twijfel - Extra info vragen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twijfel 1 - Offerte sturen met tekst twijfel%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vloerkleed - Afmetingen vragen %28auto e-mail%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Name</picklist>
+        <values>
+            <fullName>heer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>heer%2Fmevrouw</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>mevrouw</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Offerte_Bellen_Status__c</picklist>
+        <values>
+            <fullName>0%2E Offerte e-mail sturen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>0%2E Offerte verstuurd</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%2E Bellen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%2E Denkt erover na %28Email Offerte%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%2E Geen Interesse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%2E Geen gehoor %28Email Offerte%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%2E Geen telefoonnummer %28Email Offerte%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1%2E Opdracht</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E Bellen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E Geen Interesse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E Geen gehoor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E Niet gebeld</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E Offerte nogmaals sturen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E On Hold - In de toekomst</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E On hold - Laat voor verlopen offerte weten%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E Opdracht</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2%2E Telefoonnummer klopt niet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E Bellen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E Geen gehoor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E Geen interesse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E Niet gebeld</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E Offerte nogmaals sturen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E On hold - In de toekomst</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E On hold - Laat voor verlopen offerte weten</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E Opdracht</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Offerte_geldigheidsduur_dagen__c</picklist>
+        <values>
+            <fullName>14</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reden_niet_geintereseerd__c</picklist>
+        <values>
+            <fullName>Anders</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concurrent goedkoper</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duurt te lang</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Geen reden gegeven</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moeilijk te reinigen %28katoen%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nieuw kopen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prijs te hoog</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Te ver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zelf reinigen</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_Lead__c</picklist>
+        <values>
+            <fullName>Offerte Intern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opdracht Intern</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>cloudamp__Last_Lead_Source_Type__c</picklist>
+        <values>
+            <fullName>Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>cloudamp__Lead_Source_Type__c</picklist>
+        <values>
+            <fullName>Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Direct</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

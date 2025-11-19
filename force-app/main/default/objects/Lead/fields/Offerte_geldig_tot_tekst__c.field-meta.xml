@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Offerte_geldig_tot_tekst__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(MOD(DATEVALUE(  Datum_tijd_Offerte_Verstuurd__c + 14 ) - DATE(1900, 1, 7), 7), 0, &quot;zondag&quot;, 1, &quot;maandag&quot;, 2, &quot;dinsdag&quot;, 3,
+&quot;woensdag&quot;, 4, &quot;donderdag&quot;, 5, &quot;vrijdag&quot;, 6, &quot;zaterdag&quot;, &quot;None&quot;)&amp;&quot; &quot;&amp;TEXT(DAY(DATEVALUE(Datum_tijd_Offerte_Verstuurd__c + 14)))&amp;&quot; &quot;&amp;CASE(MONTH(DATEVALUE(Datum_tijd_Offerte_Verstuurd__c + 14)),1, &quot;januari&quot;,2, &quot;februari&quot;,3, &quot;maart&quot;, 4, &quot;april&quot;, 5, &quot;mei&quot;, 6, &quot;juni&quot;,7, &quot;juli&quot;,8, &quot;augustus&quot;,9, &quot;september&quot;,10, &quot;oktober&quot;,11, &quot;november&quot;,12, &quot;december&quot;,&quot;None&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Offerte - geldig tot (tekst)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

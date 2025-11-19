@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Soort__c</fullName>
+    <externalId>false</externalId>
+    <label>Soort</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Item__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bank</fullName>
+                <default>false</default>
+                <label>Bank</label>
+            </value>
+            <value>
+                <fullName>Fauteuil</fullName>
+                <default>false</default>
+                <label>Fauteuil</label>
+            </value>
+            <value>
+                <fullName>Eetkamerstoel</fullName>
+                <default>false</default>
+                <label>Eetkamerstoel</label>
+            </value>
+            <value>
+                <fullName>Stoel</fullName>
+                <default>false</default>
+                <label>Stoel</label>
+            </value>
+            <value>
+                <fullName>Kussen</fullName>
+                <default>false</default>
+                <label>Kussen</label>
+            </value>
+            <value>
+                <fullName>Hocker</fullName>
+                <default>false</default>
+                <label>Hocker</label>
+            </value>
+            <value>
+                <fullName>Afvoeren</fullName>
+                <default>false</default>
+                <label>Afvoeren</label>
+            </value>
+            <value>
+                <fullName>Opslagkosten</fullName>
+                <default>false</default>
+                <label>Opslagkosten</label>
+            </value>
+            <value>
+                <fullName>Vlies Plus</fullName>
+                <default>false</default>
+                <label>Vlies Plus</label>
+            </value>
+            <value>
+                <fullName>Profilo V</fullName>
+                <default>false</default>
+                <label>Profilo V</label>
+            </value>
+            <value>
+                <fullName>Perzisch tapijt</fullName>
+                <default>false</default>
+                <label>Perzisch tapijt</label>
+            </value>
+            <value>
+                <fullName>- Gabbeh</fullName>
+                <default>false</default>
+                <label>- Gabbeh</label>
+            </value>
+            <value>
+                <fullName>- Nain</fullName>
+                <default>false</default>
+                <label>- Nain</label>
+            </value>
+            <value>
+                <fullName>Berber tapijt</fullName>
+                <default>false</default>
+                <label>Berber tapijt</label>
+            </value>
+            <value>
+                <fullName>- Marokkaanse Berber</fullName>
+                <default>false</default>
+                <label>- Marokkaanse Berber</label>
+            </value>
+            <value>
+                <fullName>Oosters tapijt</fullName>
+                <default>false</default>
+                <label>Oosters tapijt</label>
+            </value>
+            <value>
+                <fullName>- Ziegler tapijt</fullName>
+                <default>false</default>
+                <label>- Ziegler tapijt</label>
+            </value>
+            <value>
+                <fullName>- Nepal tapijt</fullName>
+                <default>false</default>
+                <label>- Nepal tapijt</label>
+            </value>
+            <value>
+                <fullName>- Chinees tapijt</fullName>
+                <default>false</default>
+                <label>- Chinees tapijt</label>
+            </value>
+            <value>
+                <fullName>- Afghaans tapijt</fullName>
+                <default>false</default>
+                <label>- Afghaans tapijt</label>
+            </value>
+            <value>
+                <fullName>- Pakistaans tapijt</fullName>
+                <default>false</default>
+                <label>- Pakistaans tapijt</label>
+            </value>
+            <value>
+                <fullName>Kelim tapijt</fullName>
+                <default>false</default>
+                <label>Kelim tapijt</label>
+            </value>
+            <value>
+                <fullName>Synthetisch tapijt</fullName>
+                <default>false</default>
+                <label>Synthetisch tapijt</label>
+            </value>
+            <value>
+                <fullName>- Synthetisch Shaggy tapijt</fullName>
+                <default>false</default>
+                <label>- Synthetisch Shaggy tapijt</label>
+            </value>
+            <value>
+                <fullName>- Synthetisch kortpolig tapijt</fullName>
+                <default>false</default>
+                <label>- Synthetisch kortpolig tapijt</label>
+            </value>
+            <value>
+                <fullName>Bolletjes tapijt</fullName>
+                <default>false</default>
+                <label>Bolletjes tapijt</label>
+            </value>
+            <value>
+                <fullName>Groene / Antislip rug</fullName>
+                <default>false</default>
+                <label>Groene / Antislip rug</label>
+            </value>
+            <value>
+                <fullName>Handgetuft tapijt</fullName>
+                <default>false</default>
+                <label>Handgetuft tapijt</label>
+            </value>
+            <value>
+                <fullName>Hoogpolig tapijt</fullName>
+                <default>false</default>
+                <label>Hoogpolig tapijt</label>
+            </value>
+            <value>
+                <fullName>India getuft tapijt</fullName>
+                <default>false</default>
+                <label>India getuft tapijt</label>
+            </value>
+            <value>
+                <fullName>Katoenen tapijt</fullName>
+                <default>false</default>
+                <label>Katoenen tapijt</label>
+            </value>
+            <value>
+                <fullName>Louis de Poortere tapijt</fullName>
+                <default>false</default>
+                <label>Louis de Poortere tapijt</label>
+            </value>
+            <value>
+                <fullName>Machinaal pers tapijt</fullName>
+                <default>false</default>
+                <label>Machinaal pers tapijt</label>
+            </value>
+            <value>
+                <fullName>Machinaal wol tapijt</fullName>
+                <default>false</default>
+                <label>Machinaal wol tapijt</label>
+            </value>
+            <value>
+                <fullName>Patchwork tapijt</fullName>
+                <default>false</default>
+                <label>Patchwork tapijt</label>
+            </value>
+            <value>
+                <fullName>Vintage tapijt</fullName>
+                <default>false</default>
+                <label>Vintage tapijt</label>
+            </value>
+            <value>
+                <fullName>Viscose tapijt</fullName>
+                <default>false</default>
+                <label>Viscose tapijt</label>
+            </value>
+            <value>
+                <fullName>Wol dik tapijt</fullName>
+                <default>false</default>
+                <label>Wol dik tapijt</label>
+            </value>
+            <value>
+                <fullName>Wol tapijt</fullName>
+                <default>false</default>
+                <label>Wol tapijt</label>
+            </value>
+            <value>
+                <fullName>Zijde tapijt</fullName>
+                <default>false</default>
+                <label>Zijde tapijt</label>
+            </value>
+            <value>
+                <fullName>Inloopmat</fullName>
+                <default>false</default>
+                <label>Inloopmat</label>
+            </value>
+            <value>
+                <fullName>Mat boot/caravan</fullName>
+                <default>false</default>
+                <label>Mat boot/caravan</label>
+            </value>
+            <value>
+                <fullName>Anders</fullName>
+                <default>false</default>
+                <label>Anders</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Perzisch tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>- Gabbeh</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>- Nain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Berber tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>- Marokkaanse Berber</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Oosters tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>- Ziegler tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>- Nepal tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>- Chinees tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>- Afghaans tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>- Pakistaans tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Kelim tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Synthetisch tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>- Synthetisch Shaggy tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>- Synthetisch kortpolig tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Bolletjes tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Groene / Antislip rug</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Handgetuft tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Hoogpolig tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>India getuft tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Katoenen tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Louis de Poortere tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Machinaal pers tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Machinaal wol tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Patchwork tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Vintage tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Viscose tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Wol dik tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Wol tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (wederverkoper)</controllingFieldValue>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <valueName>Zijde tapijt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Kleed (p/m²)</controllingFieldValue>
+            <controllingFieldValue>Meubel (p/zitplaats)</controllingFieldValue>
+            <valueName>Anders</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meubel (p/zitplaats)</controllingFieldValue>
+            <valueName>Bank</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meubel (p/zitplaats)</controllingFieldValue>
+            <valueName>Fauteuil</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meubel (p/zitplaats)</controllingFieldValue>
+            <valueName>Eetkamerstoel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meubel (p/zitplaats)</controllingFieldValue>
+            <valueName>Stoel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meubel (p/zitplaats)</controllingFieldValue>
+            <valueName>Kussen</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Meubel (p/zitplaats)</controllingFieldValue>
+            <valueName>Hocker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anders</controllingFieldValue>
+            <valueName>Afvoeren</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Anders</controllingFieldValue>
+            <valueName>Opslagkosten</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ondertapijt</controllingFieldValue>
+            <valueName>Vlies Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Ondertapijt</controllingFieldValue>
+            <valueName>Profilo V</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

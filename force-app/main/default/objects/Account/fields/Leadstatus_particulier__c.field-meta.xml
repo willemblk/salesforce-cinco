@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leadstatus_particulier__c</fullName>
+    <externalId>false</externalId>
+    <label>Leadstatus particulier</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Niet gereageerd: Open</fullName>
+                <default>false</default>
+                <label>Niet gereageerd: Open</label>
+            </value>
+            <value>
+                <fullName>Gereageerd: Geïnteresseerd</fullName>
+                <default>false</default>
+                <label>Gereageerd: Geïnteresseerd</label>
+            </value>
+            <value>
+                <fullName>Gereageerd: On hold</fullName>
+                <default>false</default>
+                <label>Gereageerd: On hold</label>
+            </value>
+            <value>
+                <fullName>Gereageerd: Niet geïnteresseerd</fullName>
+                <default>false</default>
+                <label>Gereageerd: Niet geïnteresseerd</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

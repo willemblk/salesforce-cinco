@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cloudamp__GA_Term__c</fullName>
+    <deprecated>false</deprecated>
+    <description>utm_term variable from Google Analytics Campaign URLs: Identify paid search keywords. If you&apos;re manually tagging paid keyword campaigns, you should also use utm_term to specify the keyword</description>
+    <externalId>false</externalId>
+    <inlineHelpText>utm_term variable from Google Analytics Campaign URLs: Identify paid search keywords. If you&apos;re manually tagging paid keyword campaigns, you should also use utm_term to specify the keyword</inlineHelpText>
+    <label>First UTM Term</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

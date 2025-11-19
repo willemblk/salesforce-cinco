@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Foto__c</fullName>
+    <label>Foto</label>
+    <pluralLabel>Foto's</pluralLabel>
+    <nameField>
+        <type>Text</type>
+        <label>Foto Naam</label>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableNotes>true</enableNotes>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableAttachments>true</enableAttachments>
+</CustomObject>

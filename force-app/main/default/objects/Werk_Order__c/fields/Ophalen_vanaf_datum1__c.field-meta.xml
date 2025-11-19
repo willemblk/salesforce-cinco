@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ophalen_vanaf_datum1__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Indien het vanaf een bepaalde datum opgehaald moet worden, voer hier de datum in.</inlineHelpText>
+    <label>Ophalen vanaf datum</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

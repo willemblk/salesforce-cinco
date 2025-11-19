@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Omzet_klant__c</fullName>
+    <externalId>false</externalId>
+    <label>Omzet Werk Orders</label>
+    <summarizedField>Werk_Order__c.Subtotaal_Wasserij_Items__c</summarizedField>
+    <summaryForeignKey>Werk_Order__c.Account__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cloudamp__Lead_Source_Type__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Categorizes the type of source that sent a user to your web site. Campaign=utm tagged URL, Direct=Typed in, Organic=non-ad search, Referral=link from another site.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Categorizes the type of source that sent a user to your web site. Campaign=utm tagged URL, Direct=Typed in, Organic=non-ad search, Referral=link from another site.</inlineHelpText>
+    <label>First Lead Source Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Campaign</fullName>
+                <default>false</default>
+                <label>Campaign</label>
+            </value>
+            <value>
+                <fullName>Direct</fullName>
+                <default>false</default>
+                <label>Direct</label>
+            </value>
+            <value>
+                <fullName>Organic</fullName>
+                <default>false</default>
+                <label>Organic</label>
+            </value>
+            <value>
+                <fullName>Referral</fullName>
+                <default>false</default>
+                <label>Referral</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

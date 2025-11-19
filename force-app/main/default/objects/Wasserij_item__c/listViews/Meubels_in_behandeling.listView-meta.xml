@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Meubels_in_behandeling</fullName>
+    <columns>NAME</columns>
+    <columns>Item__c</columns>
+    <columns>Soort__c</columns>
+    <columns>Extra_behandelingen__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Item__c</field>
+        <operation>equals</operation>
+        <value>Meubel (p/zitplaats),Matras</value>
+    </filters>
+    <filters>
+        <field>Klaar_voor_aflevering__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Meubels in behandeling</label>
+</ListView>

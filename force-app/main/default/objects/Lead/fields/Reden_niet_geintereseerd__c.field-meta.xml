@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reden_niet_geintereseerd__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Indien de lead niet geïnteresseerd is geef aan waarom.</inlineHelpText>
+    <label>Reden niet geïnteresseerd</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Moeilijk te reinigen (katoen)</fullName>
+                <default>false</default>
+                <label>Moeilijk te reinigen (katoen)</label>
+            </value>
+            <value>
+                <fullName>Prijs te hoog</fullName>
+                <default>false</default>
+                <label>Prijs te hoog</label>
+            </value>
+            <value>
+                <fullName>Duurt te lang</fullName>
+                <default>false</default>
+                <label>Duurt te lang</label>
+            </value>
+            <value>
+                <fullName>Nieuw kopen</fullName>
+                <default>false</default>
+                <label>Nieuw kopen</label>
+            </value>
+            <value>
+                <fullName>Te ver</fullName>
+                <default>false</default>
+                <label>Te ver</label>
+            </value>
+            <value>
+                <fullName>Concurrent goedkoper</fullName>
+                <default>false</default>
+                <label>Concurrent gekozen</label>
+            </value>
+            <value>
+                <fullName>Zelf reinigen</fullName>
+                <default>false</default>
+                <label>Zelf reinigen</label>
+            </value>
+            <value>
+                <fullName>Geen reden gegeven</fullName>
+                <default>false</default>
+                <label>Geen reden gegeven</label>
+            </value>
+            <value>
+                <fullName>Anders</fullName>
+                <default>false</default>
+                <label>Anders</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

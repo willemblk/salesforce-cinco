@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reinigen__c</fullName>
+    <externalId>false</externalId>
+    <label>Reinigen</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>vast tapijt</fullName>
+                <default>false</default>
+                <label>vast tapijt</label>
+            </value>
+            <value>
+                <fullName>meubels</fullName>
+                <default>false</default>
+                <label>meubels</label>
+            </value>
+            <value>
+                <fullName>matras</fullName>
+                <default>false</default>
+                <label>matras</label>
+            </value>
+            <value>
+                <fullName>overig</fullName>
+                <default>false</default>
+                <label>overig</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Standaard_Grootboek__c</fullName>
+    <externalId>false</externalId>
+    <label>Standaard Grootboek</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Onderhoudsprogramma</fullName>
+                <default>false</default>
+                <label>Onderhoudsprogramma</label>
+            </value>
+            <value>
+                <fullName>Verkoop Hotels</fullName>
+                <default>false</default>
+                <label>Verkoop Hotels</label>
+            </value>
+            <value>
+                <fullName>Verkoop Bedrijven</fullName>
+                <default>false</default>
+                <label>Verkoop Bedrijven</label>
+            </value>
+            <value>
+                <fullName>Verkoop Particulier</fullName>
+                <default>false</default>
+                <label>Verkoop Particulier</label>
+            </value>
+            <value>
+                <fullName>Verkoop Onderaanneming</fullName>
+                <default>false</default>
+                <label>Verkoop Onderaanneming</label>
+            </value>
+            <value>
+                <fullName>Verkoop Handel</fullName>
+                <default>false</default>
+                <label>Verkoop Handel</label>
+            </value>
+            <value>
+                <fullName>Verkoop Wasserij</fullName>
+                <default>false</default>
+                <label>Verkoop Wasserij</label>
+            </value>
+            <value>
+                <fullName>Verkoop Specialistisch</fullName>
+                <default>false</default>
+                <label>Verkoop Specialistisch</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

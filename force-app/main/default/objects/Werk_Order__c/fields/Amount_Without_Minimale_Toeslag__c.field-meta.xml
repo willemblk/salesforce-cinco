@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_Without_Minimale_Toeslag__c</fullName>
+    <externalId>false</externalId>
+    <label>Amount Without Minimale Toeslag</label>
+    <summarizedField>Wasserij_item__c.Totale_Prijs__c</summarizedField>
+    <summaryFilterItems>
+        <field>Wasserij_item__c.Minimale_Toeslag__c</field>
+        <operation>notEqual</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Wasserij_item__c.Werk_Order__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

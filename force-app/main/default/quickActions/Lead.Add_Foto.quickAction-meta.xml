@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Lead.Add_Foto</fullName>
+  <label>Foto toevoegen</label>
+  <type>Create</type>
+  <description>Maak een nieuwe Foto (relatie naar Lead wordt automatisch gezet).</description>
+  <targetObject>Foto__c</targetObject>
+  <targetParentField>Lead__c</targetParentField>
+  <optionsCreateFeedItem>false</optionsCreateFeedItem>
+</QuickAction>

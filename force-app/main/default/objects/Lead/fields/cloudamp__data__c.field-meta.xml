@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>cloudamp__data__c</fullName>
+    <deprecated>false</deprecated>
+    <description>This is the integration field where tracking data from the CloudAmp Campaign Tracker goes into newly created leads.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the integration field where tracking data from the CloudAmp Campaign Tracker goes into newly created leads.</inlineHelpText>
+    <label>data</label>
+    <length>131072</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

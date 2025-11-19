@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Particulier</fullName>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Buiten werkgebied %28auto e-mail%29</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Doorverwezen</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Gereageerd%3A Komt er snel op terug</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Gereageerd%3A Niet geïnteresseerd</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Gereageerd%3A On Hold</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Kan niet gereinigd worden</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Niet gereageerd%3A Open</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Offerte Akkoord</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Offerteaanvraag</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>Opdracht</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>
