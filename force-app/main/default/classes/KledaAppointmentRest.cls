@@ -20,6 +20,9 @@ global with sharing class KledaAppointmentRest {
         public String deliveryAddress;
         public String pickupNotes;
         public String deliveryNotes;
+        public Decimal totalM2;
+        public Decimal underlayPrice;
+        public Boolean ondertapijtBesteld;
         public List<OptionDto> options;
         public Boolean alreadyChosen;
         public Integer chosenOption;
@@ -55,6 +58,23 @@ global with sharing class KledaAppointmentRest {
         if (res.phaseType == null) {
             res.message = 'Work order is in a status that cannot be scheduled.';
             res.errorCode = 'INVALID_STATUS';
+            return res;
+        }
+
+        String typeParam = req.params.get('type');
+        if (typeParam == 'upsell') {
+            Set<String> allowedUpsellStatuses = new Set<String>{
+                'Aan het reinigen',
+                'Terugbrengen plannen',
+                'Terugbrengen ingepland'
+            };
+            if (!allowedUpsellStatuses.contains(wo.Werk_Order_Status__c)) {
+                res.success = false;
+                res.message = 'Upsell not available for this status.';
+                res.errorCode = 'NOT_UPSELLABLE';
+                return res;
+            }
+            res.success = true;
             return res;
         }
 
@@ -227,7 +247,10 @@ global with sharing class KledaAppointmentRest {
                       Ophaaladres_formule__c,
                       Afleveradres_formule__c,
                       Opmerkingen_Ophalen__c,
-                      Opmerkingen_Aflevering__c
+                      Opmerkingen_Aflevering__c,
+                      Totaal_m2_vloerkleed__c,
+                      Prijs_Ondertapijt__c,
+                      Ondertapijt_besteld__c
                 FROM Werk_Order__c
                 WHERE Route_Keuze_Token__c = :token
                 LIMIT 1
@@ -248,6 +271,9 @@ global with sharing class KledaAppointmentRest {
         res.deliveryAddress = wo.Afleveradres_formule__c;
         res.pickupNotes = wo.Opmerkingen_Ophalen__c;
         res.deliveryNotes = wo.Opmerkingen_Aflevering__c;
+        res.totalM2 = wo.Totaal_m2_vloerkleed__c;
+        res.underlayPrice = wo.Prijs_Ondertapijt__c;
+        res.ondertapijtBesteld = wo.Ondertapijt_besteld__c;
     }
 
     private static String determinePhaseType(String status) {
