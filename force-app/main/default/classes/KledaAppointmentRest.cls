@@ -20,6 +20,10 @@ global with sharing class KledaAppointmentRest {
         public String deliveryAddress;
         public String pickupNotes;
         public String deliveryNotes;
+        public Datetime pickupWindowStart;
+        public Datetime pickupWindowEnd;
+        public Datetime deliveryWindowStart;
+        public Datetime deliveryWindowEnd;
         public Decimal totalM2;
         public Decimal underlayPrice;
         public Boolean ondertapijtBesteld;
@@ -74,6 +78,7 @@ global with sharing class KledaAppointmentRest {
                 res.errorCode = 'NOT_UPSELLABLE';
                 return res;
             }
+            res.ondertapijtBesteld = wo.Ondertapijt_besteld__c;
             res.success = true;
             return res;
         }
@@ -238,6 +243,7 @@ global with sharing class KledaAppointmentRest {
                   SELECT Id,
                       Name,
                       Klantnaam__c,
+                      Naam_op_Factuur__c,
                       Werk_Order_Status__c,
                       Route_Optie_1__c,
                       Route_Optie_2__c,
@@ -248,6 +254,10 @@ global with sharing class KledaAppointmentRest {
                       Afleveradres_formule__c,
                       Opmerkingen_Ophalen__c,
                       Opmerkingen_Aflevering__c,
+                      Ophalen_vanaf__c,
+                      Ophalen_tot__c,
+                      Afleveren_vanaf__c,
+                      Afleveren_tot__c,
                       Totaal_m2_vloerkleed__c,
                       Prijs_Ondertapijt__c,
                       Ondertapijt_besteld__c
@@ -265,12 +275,18 @@ global with sharing class KledaAppointmentRest {
     private static void populatePhaseAndStatus(Werk_Order__c wo, AppointmentResponse res) {
         res.status = wo.Werk_Order_Status__c;
         res.phaseType = determinePhaseType(res.status);
-        res.customerName = wo.Klantnaam__c;
+        res.customerName = String.isNotBlank(wo.Naam_op_Factuur__c)
+            ? wo.Naam_op_Factuur__c
+            : wo.Klantnaam__c;
         res.workOrderNumber = wo.Name;
         res.pickupAddress = wo.Ophaaladres_formule__c;
         res.deliveryAddress = wo.Afleveradres_formule__c;
         res.pickupNotes = wo.Opmerkingen_Ophalen__c;
         res.deliveryNotes = wo.Opmerkingen_Aflevering__c;
+        res.pickupWindowStart = wo.Ophalen_vanaf__c;
+        res.pickupWindowEnd = wo.Ophalen_tot__c;
+        res.deliveryWindowStart = wo.Afleveren_vanaf__c;
+        res.deliveryWindowEnd = wo.Afleveren_tot__c;
         res.totalM2 = wo.Totaal_m2_vloerkleed__c;
         res.underlayPrice = wo.Prijs_Ondertapijt__c;
         res.ondertapijtBesteld = wo.Ondertapijt_besteld__c;

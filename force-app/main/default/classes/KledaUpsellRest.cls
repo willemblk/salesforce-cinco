@@ -58,22 +58,27 @@ global with sharing class KledaUpsellRest {
              return res;
         }
         
-        if (body.confirm == true) {
-            wo.Ondertapijt_besteld__c = true;
-            try {
-                update wo;
-                res.success = true;
-                res.message = 'Upsell confirmed';
-            } catch (DmlException e) {
-                res.message = 'Error updating work order: ' + e.getMessage();
-                res.errorCode = 'UPDATE_FAILED';
-                return res;
+        Boolean confirmValue = (body.confirm == true);
+        Boolean declineValue = (body.confirm == false);
+
+        if (confirmValue || declineValue) {
+            Boolean newFlagValue = confirmValue;
+            if (wo.Ondertapijt_besteld__c != newFlagValue) {
+                wo.Ondertapijt_besteld__c = newFlagValue;
+                try {
+                    update wo;
+                } catch (DmlException e) {
+                    res.message = 'Error updating work order: ' + e.getMessage();
+                    res.errorCode = 'UPDATE_FAILED';
+                    return res;
+                }
             }
-        } else {
-            // If confirm is false, we just acknowledge. 
-            // Maybe we want to log a refusal? For now just success.
+
             res.success = true;
-            res.message = 'Upsell declined';
+            res.message = confirmValue ? 'Upsell confirmed' : 'Upsell declined';
+        } else {
+            res.success = true;
+            res.message = 'Upsell preference recorded';
         }
 
         return res;

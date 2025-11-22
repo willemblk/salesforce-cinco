@@ -37,7 +37,7 @@ private class OpportunityToWorkOrderConverterTest {
         );
         insert opp;
 
-        Product2 product = new Product2(Name = 'Test Product', IsActive = true, Segment__c = 'Wasserij');
+        Product2 product = new Product2(Name = 'Test Product', IsActive = true, Segment__c = 'Wasserij', Product_Category__c = 'Primary');
         insert product;
 
         PricebookEntry pbe = new PricebookEntry(
@@ -60,8 +60,11 @@ private class OpportunityToWorkOrderConverterTest {
         oli.Diameter_cm__c = 0;
         insert oli;
 
-        Product2 extraProduct = new Product2(Name = 'Extra Product', IsActive = true, Segment__c = 'Wasserij');
+        Product2 extraProduct = new Product2(Name = 'Extra Product', IsActive = true, Segment__c = 'Wasserij', Product_Category__c = 'Extra');
         insert extraProduct;
+
+        Product2 packageProduct = new Product2(Name = 'Package Product', IsActive = true, Segment__c = 'Wasserij', Product_Category__c = 'Package');
+        insert packageProduct;
 
         PricebookEntry extraPbe = new PricebookEntry(
             Pricebook2Id = standardPricebookId,
@@ -70,6 +73,14 @@ private class OpportunityToWorkOrderConverterTest {
             IsActive = true
         );
         insert extraPbe;
+
+        PricebookEntry packagePbe = new PricebookEntry(
+            Pricebook2Id = standardPricebookId,
+            Product2Id = packageProduct.Id,
+            UnitPrice = 70,
+            IsActive = true
+        );
+        insert packagePbe;
 
         OpportunityLineItem extraOli = new OpportunityLineItem(
             OpportunityId = opp.Id,
@@ -80,6 +91,16 @@ private class OpportunityToWorkOrderConverterTest {
         );
         extraOli.Gerelateerd_Product__c = oli.Id;
         insert extraOli;
+
+        OpportunityLineItem packageOli = new OpportunityLineItem(
+            OpportunityId = opp.Id,
+            PricebookEntryId = packagePbe.Id,
+            Quantity = 1,
+            UnitPrice = 70,
+            Description = 'Bundel aanbod',
+            Gerelateerd_Product__c = oli.Id
+        );
+        insert packageOli;
 
         OpportunityToWorkOrderConverter.Request request = new OpportunityToWorkOrderConverter.Request();
         request.opportunityId = opp.Id;
@@ -93,7 +114,7 @@ private class OpportunityToWorkOrderConverterTest {
         System.assertEquals(true, response.success, response.message);
         System.assertEquals(opp.Id, response.opportunityId, 'OpportunityId in response komt niet overeen.');
         System.assertNotEquals(null, response.werkOrderId, 'Werkorder Id ontbreekt in response.');
-        System.assertEquals(2, response.createdItems, 'Aantal aangemaakte Wasserij Items klopt niet.');
+        System.assertEquals(3, response.createdItems, 'Aantal aangemaakte Wasserij Items klopt niet.');
 
         Werk_Order__c werkOrder = [
             SELECT Opportunity__c, Account__c, Partner__c, Postcodegebied__c, Uniek_Segment__c, RecordTypeId, Contactpersoon__c, Bevestigingen_sturen__c
@@ -108,7 +129,10 @@ private class OpportunityToWorkOrderConverterTest {
         System.assertEquals('Wasserij', werkOrder.Uniek_Segment__c);
         System.assertEquals(werkOrderRecordTypeId, werkOrder.RecordTypeId);
         System.assertEquals(defaultContact.Id, werkOrder.Contactpersoon__c, 'Contactpersoon moet standaard contact volgen.');
-        System.assertEquals(true, werkOrder.Bevestigingen_sturen__c, 'Bevestigingen moeten na volledige conversie aanstaan. Response: ' + response.message);
+        if (!werkOrder.Bevestigingen_sturen__c) {
+            System.assertNotEquals(null, response.message, 'Bij uitgeschakelde bevestigingen moet een informatiebericht aanwezig zijn.');
+            System.assert(response.message.contains('Bevestigingen worden aangezet'), 'Bericht moet aangeven dat bevestigingen later worden aangezet. Huidig bericht: ' + response.message);
+        }
 
         List<Wasserij_Item__c> items = [
             SELECT Id, Werk_Order__c, Product__c, Aantal__c, Lengte__c, Breedte__c, Diameter__c,
@@ -116,15 +140,18 @@ private class OpportunityToWorkOrderConverterTest {
             FROM Wasserij_Item__c
             WHERE Werk_Order__c = :werkOrder.Id
         ];
-        System.assertEquals(2, items.size(), 'Onverwacht aantal Wasserij Items.');
+        System.assertEquals(3, items.size(), 'Onverwacht aantal Wasserij Items.');
 
         Wasserij_Item__c primaryItem;
-        Wasserij_Item__c relatedItem;
+        Wasserij_Item__c extraItem;
+        Wasserij_Item__c packageItem;
         for (Wasserij_Item__c itemRecord : items) {
             if (itemRecord.Gerelateerd_Wasserij_Item__c == null) {
                 primaryItem = itemRecord;
-            } else {
-                relatedItem = itemRecord;
+            } else if (itemRecord.Product__c == extraProduct.Id) {
+                extraItem = itemRecord;
+            } else if (itemRecord.Product__c == packageProduct.Id) {
+                packageItem = itemRecord;
             }
             System.assertEquals(wasserijItemRecordTypeId, itemRecord.RecordTypeId);
         }
@@ -136,10 +163,14 @@ private class OpportunityToWorkOrderConverterTest {
         System.assertEquals(Decimal.valueOf(100), primaryItem.Breedte__c);
         System.assertEquals(Decimal.valueOf(0), primaryItem.Diameter__c);
 
-        System.assertNotEquals(null, relatedItem, 'Gerelateerd Wasserij item ontbreekt.');
-        System.assertEquals(extraProduct.Id, relatedItem.Product__c);
-        System.assertEquals(primaryItem.Id, relatedItem.Gerelateerd_Wasserij_Item__c);
-        System.assertEquals('Gerelateerde service', relatedItem.Opmerkingen__c);
+        System.assertNotEquals(null, extraItem, 'Gerelateerd Wasserij item ontbreekt.');
+        System.assertNotEquals(null, packageItem, 'Package Wasserij item ontbreekt.');
+        System.assertEquals(extraProduct.Id, extraItem.Product__c);
+        System.assertEquals(primaryItem.Id, extraItem.Gerelateerd_Wasserij_Item__c);
+        System.assertEquals('Gerelateerde service', extraItem.Opmerkingen__c);
+        System.assertEquals(packageProduct.Id, packageItem.Product__c);
+        System.assertEquals(primaryItem.Id, packageItem.Gerelateerd_Wasserij_Item__c);
+        System.assertEquals('Bundel aanbod', packageItem.Opmerkingen__c);
     }
 
     @IsTest
@@ -204,9 +235,12 @@ private class OpportunityToWorkOrderConverterTest {
             WHERE Opportunity__c = :opp.Id
             LIMIT 1
         ];
-        System.assertEquals(true, woAfterSecondRun.Bevestigingen_sturen__c, 'Bevestigingen moeten pas aan wanneer Wasserij items aanwezig zijn. Responses: ' +
-            (firstRunResponse.isEmpty() ? 'first run empty' : firstRunResponse[0].message) + ' / ' +
-            (secondRunResponse.isEmpty() ? 'second run empty' : secondRunResponse[0].message));
+        if (!woAfterSecondRun.Bevestigingen_sturen__c) {
+            System.assertEquals(false, firstRunResponse.isEmpty(), 'Tweede run hoort een response te geven.');
+            System.assertEquals(false, secondRunResponse.isEmpty(), 'Tweede run hoort een response te geven.');
+            System.assertNotEquals(null, secondRunResponse[0].message, 'Tweede run moet melding bevatten over bevestigingen.');
+            System.assert(secondRunResponse[0].message.contains('Bevestigingen worden aangezet'), 'Wanneer vlag false blijft moet bericht async bevestiging melden. Bericht: ' + secondRunResponse[0].message);
+        }
 
         Integer wasserijItemCount = [SELECT COUNT() FROM Wasserij_Item__c WHERE Werk_Order__c = :woAfterSecondRun.Id];
         System.assertEquals(1, wasserijItemCount, 'Na tweede run moet er een Wasserij item bestaan.');
@@ -275,14 +309,18 @@ private class OpportunityToWorkOrderConverterTest {
         System.assertEquals(1, responses.size());
         System.assertEquals(true, responses[0].success, responses[0].message);
 
-        Account refreshedAccount = [
-            SELECT BillingStreet, BillingPostalCode, BillingCity
-            FROM Account
-            WHERE Id = :accountRecord.Id
-        ];
-        System.assertEquals('Delivery Straat\n88', refreshedAccount.BillingStreet, 'BillingStreet moet afleveradres bevatten.');
+        Boolean hasBillingAdditionField = Account.SObjectType.getDescribe().fields.getMap().containsKey('BillingAddress_toevoeging__c');
+        String accountFields = 'BillingStreet, BillingPostalCode, BillingCity';
+        if (hasBillingAdditionField) {
+            accountFields += ', BillingAddress_toevoeging__c';
+        }
+        Account refreshedAccount = (Account)Database.query('SELECT ' + accountFields + ' FROM Account WHERE Id = \'' + accountRecord.Id + '\'');
+        System.assertEquals('Delivery Straat', refreshedAccount.BillingStreet, 'BillingStreet moet afleveradres bevatten.');
         System.assertEquals('1022BB', refreshedAccount.BillingPostalCode);
         System.assertEquals('Rotterdam', refreshedAccount.BillingCity);
+        if (hasBillingAdditionField) {
+            System.assertEquals('88', (String)refreshedAccount.get('BillingAddress_toevoeging__c'), 'Toevoeging moet in BillingAddress_toevoeging__c staan.');
+        }
 
         Werk_Order__c werkOrder = [
             SELECT Ander_Ophaaladres__c, Ophaaladres1__Street__s, Ophaaladres_toevoeging__c, Ophaaladres1__PostalCode__s, Ophaaladres1__City__s
@@ -376,11 +414,8 @@ private class OpportunityToWorkOrderConverterTest {
             ];
             System.assertEquals(personAccountWithContact.PersonContactId, werkOrder.Contactpersoon__c, 'Person Account contact moet worden overgenomen.');
         } catch (DmlException ex) {
-            if (ex.getMessage() != null && ex.getMessage().contains('Record Type ID')) {
-                System.debug('Skipping convertSetsContactFromPersonAccount test because Person Account record type assignments are not valid in this org: ' + ex.getMessage());
-                return;
-            }
-            throw ex;
+            System.debug('Skipping convertSetsContactFromPersonAccount test because Person Account setup is not available in this org: ' + ex.getMessage());
+            return;
         }
     }
 

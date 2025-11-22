@@ -40,6 +40,7 @@ global with sharing class PriceCalculationApi {
         @AuraEnabled public String appliedBundleDiscount;
         @AuraEnabled public Decimal regioToeslagPercentage; // <-- NIEUWE REGEL VOOR REGIOTOESLAG
         @AuraEnabled public List<BundleDiscountRule> bundleDiscounts { get; set; } // <-- NIEUWE REGEL VOOR BUNDLE DISCOUNTS
+        @AuraEnabled public List<PackageLineDTO> packages { get; set; } // Optionele pakketten voor Kleda frontend
     @AuraEnabled public Decimal minimumOrderExBtw;      // Order-minimum per postcode/segment
     @AuraEnabled public Decimal minimumOrderInclBtw;    // Display value voor frontend (incl. btw)
         
@@ -101,6 +102,36 @@ global with sharing class PriceCalculationApi {
         // ▲▲▲ END PERCENTAGE PRICING FIELDS ▲▲▲
         
         // SR segment fields removed - not used in WordPress frontend
+    }
+
+    // Eén pakketproduct voor de catalogus (Wasserij rug pakketten)
+    global class PackageLineDTO implements Comparable {
+        @AuraEnabled public String sku;
+        @AuraEnabled public String label;
+        @AuraEnabled public String description;
+        @AuraEnabled public String pricingType;
+        @AuraEnabled public Decimal percentage;
+        @AuraEnabled public Decimal price_flat;
+        @AuraEnabled public Decimal price_per_m2;
+        @AuraEnabled public Integer sortOrder;
+        @AuraEnabled public String category;
+
+        // Sorteer pakketten op priority → label zodat JSON stabiel blijft
+        public Integer compareTo(Object otherObject) {
+            if (otherObject == null) {
+                return 1;
+            }
+            PackageLineDTO other = (PackageLineDTO) otherObject;
+            Integer thisOrder = sortOrder != null ? sortOrder : 0;
+            Integer otherOrder = other.sortOrder != null ? other.sortOrder : 0;
+            if (thisOrder == otherOrder) {
+                String thisLabel = label != null ? label : '';
+                String otherLabel = other.label != null ? other.label : '';
+                Integer insensitiveCompare = thisLabel.toLowerCase().compareTo(otherLabel.toLowerCase());
+                return insensitiveCompare != 0 ? insensitiveCompare : thisLabel.compareTo(otherLabel);
+            }
+            return thisOrder - otherOrder;
+        }
     }
 
     // Bundle discount regel voor frontend
@@ -225,6 +256,10 @@ global with sharing class PriceCalculationApi {
             
             System.debug('Partner found: ' + response.afhandelingsmethode);
 
+            // Laad optionele pakketten voor Wasserij (alleen indien relevant voor segment/site)
+            List<PackageLineDTO> packageCatalog = getPackagesForSegment(request.segment, request);
+            System.debug('📦 Loaded ' + packageCatalog.size() + ' packages for segment ' + request.segment);
+
             // Stap B: Stuur de productcatalogus EN bundle discounts terug (als er geen producten zijn om te berekenen)
             if (request.products == null || request.products.isEmpty()) {
                 System.debug('No products to calculate - returning product catalog with bundle discounts');
@@ -233,6 +268,7 @@ global with sharing class PriceCalculationApi {
                 // Bundle discount regels toevoegen aan catalogus response
                 response.bundleDiscounts = getBundleDiscountRulesForSegment(request.segment);
                 System.debug('🎁 Added ' + response.bundleDiscounts.size() + ' bundle discount rules to catalog response');
+                response.packages = packageCatalog;
                 
                 return response;
             }
@@ -258,6 +294,7 @@ global with sharing class PriceCalculationApi {
             
             // Bundle discount regels ook toevoegen bij calculatie response
             response.bundleDiscounts = getBundleDiscountRulesForSegment(request.segment);
+            response.packages = packageCatalog;
             
             System.debug('Price calculation completed successfully. Total: €' + response.eindTotaal);
             return response;
@@ -335,7 +372,7 @@ global with sharing class PriceCalculationApi {
         // ▼▼▼ NIEUWE LOGICA VOOR MULTI-WEBSITE FILTERING ▼▼▼
         // Haal de siteId op uit de request. Gebruik een fallback als deze niet is meegegeven.
         // Dit zorgt ervoor dat de code niet breekt als een oude plugin-versie de call doet.
-        String siteIdentifier = String.isNotBlank(request.siteId) ? request.siteId : 'CincoCleaning';
+        String siteIdentifier = resolveSiteIdentifier(request);
         System.debug('Filtering catalog for site identifier: ' + siteIdentifier);
         // ▲▲▲ EINDE NIEUWE LOGICA ▲▲▲
         
@@ -681,6 +718,130 @@ global with sharing class PriceCalculationApi {
         
         // Return the flat list that WordPress expects
         return flatProductList;
+    }
+
+    // Haalt optionele Wasserij pakketten op voor de catalogus
+    private static List<PackageLineDTO> getPackagesForSegment(String segment, PriceRequest request) {
+        List<PackageLineDTO> packages = new List<PackageLineDTO>();
+        String wasserijSegment = 'Wasserij';
+        if (String.isBlank(segment) || !segment.equalsIgnoreCase(wasserijSegment)) {
+            System.debug('Skipping package retrieval for segment ' + segment + ' (only supported for Wasserij).');
+            return packages;
+        }
+
+        String siteIdentifier = resolveSiteIdentifier(request);
+        System.debug('Loading packages for site identifier: ' + siteIdentifier);
+
+        try {
+            List<Product2> packageProducts = [
+                SELECT Id, Name, ProductCode, Description, Product_Category__c,
+                       Segment__c, Beschikbare_Websites__c, Gerelateerd_hoofdproduct__r.ProductCode
+                FROM Product2
+                WHERE Segment__c = :wasserijSegment
+                  AND Product_Category__c = 'Package'
+                  AND IsActive = true
+                  AND Gerelateerd_hoofdproduct__r.ProductCode = 'WAS-PRIM-VLOERKLEED-REINIGEN'
+                  AND Beschikbare_Websites__c INCLUDES (:siteIdentifier)
+                ORDER BY Name ASC
+            ];
+
+            if (packageProducts.isEmpty()) {
+                System.debug('No package products found for site ' + siteIdentifier + '.');
+                return packages;
+            }
+
+            Set<Id> packageIds = new Set<Id>();
+            for (Product2 pkg : packageProducts) {
+                packageIds.add(pkg.Id);
+            }
+
+            Map<Id, Prijsmanagement__c> policyMap = new Map<Id, Prijsmanagement__c>();
+            if (!packageIds.isEmpty()) {
+                for (Prijsmanagement__c policy : [
+                    SELECT Id, Product__c, Eenheidsprijs__c, Relatieve_prijs__c,
+                           Price_Type__c, Policy_Priority__c
+                    FROM Prijsmanagement__c
+                    WHERE Product__c IN :packageIds
+                      AND Actief__c = true
+                      AND Geldig_vanaf__c <= TODAY
+                      AND (Geldig_tot__c >= TODAY OR Geldig_tot__c = null)
+                    ORDER BY Product__c, Policy_Priority__c ASC NULLS LAST, Geldig_vanaf__c DESC
+                ]) {
+                    if (!policyMap.containsKey(policy.Product__c)) {
+                        policyMap.put(policy.Product__c, policy);
+                        System.debug('📦 Selected package policy for product ' + policy.Product__c +
+                                  ' (priority ' + policy.Policy_Priority__c + ').');
+                    } else {
+                        System.debug('↪️ Skipped lower priority package policy for product ' + policy.Product__c);
+                    }
+                }
+            }
+
+            for (Product2 pkg : packageProducts) {
+                PackageLineDTO dto = new PackageLineDTO();
+                dto.sku = pkg.ProductCode;
+                dto.label = pkg.Name;
+                dto.description = pkg.Description;
+                dto.category = pkg.Product_Category__c;
+                dto.sortOrder = 0;
+
+                Prijsmanagement__c policy = policyMap.get(pkg.Id);
+                if (policy != null) {
+                    dto.sortOrder = policy.Policy_Priority__c != null ? policy.Policy_Priority__c.intValue() : 0;
+                    String pricingType = determinePackagePricingType(policy);
+                    dto.pricingType = pricingType;
+                    if (pricingType == 'percentage') {
+                        dto.percentage = policy.Relatieve_prijs__c;
+                        dto.price_flat = null;
+                        dto.price_per_m2 = null;
+                    } else if (pricingType == 'flat') {
+                        dto.price_flat = policy.Eenheidsprijs__c;
+                        dto.percentage = null;
+                        dto.price_per_m2 = null;
+                    } else {
+                        dto.price_per_m2 = policy.Eenheidsprijs__c;
+                        dto.percentage = null;
+                        dto.price_flat = null;
+                    }
+                } else {
+                    System.debug('⚠️ No active pricing policy found for package ' + pkg.ProductCode);
+                }
+
+                packages.add(dto);
+            }
+
+            packages.sort();
+        } catch (Exception e) {
+            System.debug('Error loading packages: ' + e.getMessage());
+            return new List<PackageLineDTO>();
+        }
+
+        return packages;
+    }
+
+    private static String determinePackagePricingType(Prijsmanagement__c policy) {
+        if (policy == null) {
+            return null;
+        }
+
+        String rawType = policy.Price_Type__c != null ? policy.Price_Type__c.toLowerCase() : '';
+        if (rawType.contains('flat')) {
+            return 'flat';
+        }
+        if (rawType.contains('percentage')) {
+            return 'percentage';
+        }
+        if (policy.Relatieve_prijs__c != null && policy.Relatieve_prijs__c > 0) {
+            return 'percentage';
+        }
+        return 'per_m2';
+    }
+
+    private static String resolveSiteIdentifier(PriceRequest request) {
+        if (request != null && !String.isBlank(request.siteId)) {
+            return request.siteId;
+        }
+        return 'CincoCleaning';
     }
     
     // Haalt bundle discount regels op voor een segment

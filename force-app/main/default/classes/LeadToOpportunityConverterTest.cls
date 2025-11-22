@@ -2,7 +2,7 @@
 private class LeadToOpportunityConverterTest {
 
     @IsTest
-    static void convertLeadWithExtras() {
+    static void convertLeadWithExtrasAndPackage() {
         Id standardPricebookId = Test.getStandardPricebookId();
         update new Pricebook2(Id = standardPricebookId, IsActive = true);
 
@@ -10,19 +10,29 @@ private class LeadToOpportunityConverterTest {
             Name = 'Primary Service',
             ProductCode = 'PRIM-001',
             IsActive = true,
-            Segment__c = 'SR'
+            Segment__c = 'SR',
+            Product_Category__c = 'Primary'
         );
         Product2 extraProduct = new Product2(
             Name = 'Extra Service',
             ProductCode = 'EXTRA-001',
             IsActive = true,
-            Segment__c = 'SR'
+            Segment__c = 'SR',
+            Product_Category__c = 'Extra'
         );
-        insert new List<Product2>{ primaryProduct, extraProduct };
+        Product2 packageProduct = new Product2(
+            Name = 'Package Service',
+            ProductCode = 'PKG-001',
+            IsActive = true,
+            Segment__c = 'SR',
+            Product_Category__c = 'Package'
+        );
+        insert new List<Product2>{ primaryProduct, extraProduct, packageProduct };
 
         insert new List<PricebookEntry>{
             new PricebookEntry(Pricebook2Id = standardPricebookId, Product2Id = primaryProduct.Id, UnitPrice = 100, IsActive = true),
-            new PricebookEntry(Pricebook2Id = standardPricebookId, Product2Id = extraProduct.Id, UnitPrice = 25, IsActive = true)
+            new PricebookEntry(Pricebook2Id = standardPricebookId, Product2Id = extraProduct.Id, UnitPrice = 25, IsActive = true),
+            new PricebookEntry(Pricebook2Id = standardPricebookId, Product2Id = packageProduct.Id, UnitPrice = 150, IsActive = true)
         };
 
         PricebookEntry primaryEntry = [
@@ -70,6 +80,16 @@ private class LeadToOpportunityConverterTest {
         );
         insert extraLeadProduct;
 
+        Lead_Product__c packageLeadProduct = new Lead_Product__c(
+            Lead__c = leadRecord.Id,
+            Product__c = packageProduct.Id,
+            Gerelateerd_Product__c = primaryLeadProduct.Id,
+            Aantal__c = 1,
+            Totale_Prijs__c = 150,
+            Bijzonderheden__c = 'Premium pakket'
+        );
+        insert packageLeadProduct;
+
         LeadToOpportunityConverter.Request request = new LeadToOpportunityConverter.Request();
         request.leadId = leadRecord.Id;
         request.oppStageName = 'Qualification';
@@ -82,7 +102,7 @@ private class LeadToOpportunityConverterTest {
         LeadToOpportunityConverter.Response response = responses[0];
     System.assertEquals(true, response.success, 'Conversie zou moeten slagen. ' + response.message);
         System.assertNotEquals(null, response.opportunityId, 'Opportunity Id ontbreekt.');
-        System.assertEquals(2, response.opportunityLineItemIds.size(), 'Er moeten twee opportunity line items zijn.');
+        System.assertEquals(3, response.opportunityLineItemIds.size(), 'Er moeten drie opportunity line items zijn.');
 
         Opportunity opportunityRecord = [
             SELECT StageName, Pricebook2Id, Ophaaladres_Toevoeging__c, Afleveradres_Toevoeging__c
@@ -95,18 +115,40 @@ private class LeadToOpportunityConverterTest {
         System.assertEquals('balie links', opportunityRecord.Afleveradres_Toevoeging__c, 'Afleveradres toevoeging is niet overgenomen.');
 
         List<OpportunityLineItem> opportunityLineItems = [
-            SELECT Id, Quantity, UnitPrice, Description, Gerelateerd_Product__c, Lengte_cm__c, Breedte_cm__c, Diameter_cm__c
+            SELECT Id, Quantity, UnitPrice, Description, Gerelateerd_Product__c,
+                   Lengte_cm__c, Breedte_cm__c, Diameter_cm__c, PricebookEntry.Product2Id
             FROM OpportunityLineItem
             WHERE OpportunityId = :response.opportunityId
-            ORDER BY UnitPrice DESC
         ];
-        System.assertEquals(2, opportunityLineItems.size(), 'De opportunity moet twee regels hebben.');
-        OpportunityLineItem primaryOli = opportunityLineItems[0];
-        OpportunityLineItem extraOli = opportunityLineItems[1];
+        System.assertEquals(3, opportunityLineItems.size(), 'De opportunity moet drie regels hebben.');
+        OpportunityLineItem primaryOli;
+        List<OpportunityLineItem> childOlis = new List<OpportunityLineItem>();
+        for (OpportunityLineItem oli : opportunityLineItems) {
+            if (oli.Gerelateerd_Product__c == null) {
+                primaryOli = oli;
+            } else {
+                childOlis.add(oli);
+            }
+        }
+        System.assertNotEquals(null, primaryOli, 'Primair opportunity product ontbreekt.');
+        System.assertEquals(2, childOlis.size(), 'Er moeten twee gerelateerde producten zijn.');
+        OpportunityLineItem extraOli;
+        OpportunityLineItem packageOli;
+        for (OpportunityLineItem child : childOlis) {
+            System.assertEquals(primaryOli.Id, child.Gerelateerd_Product__c, 'Child regel moet aan primaire regel gekoppeld zijn.');
+            System.assertEquals(true, child.Description != null && child.Description.startsWith('[EXTRA]'), 'Child beschrijving mist [EXTRA] prefix.');
+            if (child.PricebookEntry != null && child.PricebookEntry.Product2Id == extraProduct.Id) {
+                extraOli = child;
+            } else if (child.PricebookEntry != null && child.PricebookEntry.Product2Id == packageProduct.Id) {
+                packageOli = child;
+            }
+        }
+        System.assertNotEquals(null, extraOli, 'Extra opportunity regel ontbreekt.');
+        System.assertNotEquals(null, packageOli, 'Package opportunity regel ontbreekt.');
         System.assertEquals(2, primaryOli.Quantity, 'Hoeveelheid van primaire regel klopt niet.');
         System.assertEquals(100, primaryOli.UnitPrice, 'Unit price van primaire regel klopt niet.');
         System.assertEquals('[EXTRA] Extra onderhoud', extraOli.Description, 'Beschrijving van extra regel mist prefix.');
-        System.assertEquals(primaryOli.Id, extraOli.Gerelateerd_Product__c, 'Extra regel is niet gekoppeld aan de primaire regel.');
+        System.assertEquals('[EXTRA] Premium pakket', packageOli.Description, 'Beschrijving van package regel mist prefix.');
         System.assertEquals(primaryLeadProduct.Lengte_cm__c, primaryOli.Lengte_cm__c, 'Lengte van primaire regel is onjuist.');
         System.assertEquals(primaryLeadProduct.Breedte_cm__c, primaryOli.Breedte_cm__c, 'Breedte van primaire regel is onjuist.');
         System.assertEquals(extraLeadProduct.Lengte_cm__c, extraOli.Lengte_cm__c, 'Lengte van extra regel is onjuist.');

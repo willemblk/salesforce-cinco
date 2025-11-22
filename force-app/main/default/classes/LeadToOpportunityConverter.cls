@@ -208,7 +208,7 @@ global with sharing class LeadToOpportunityConverter {
         Boolean hasUnitPriceField = leadProductFields.containsKey('Eenheidsprijs__c');
         Boolean hasSalesPriceField = leadProductFields.containsKey('Verkoopprijs__c');
 
-    String leadProductQuery = 'SELECT Id, Lead__c, Product__c, Gerelateerd_Product__c, Aantal__c, Totale_Prijs__c, Bijzonderheden__c, Lengte_cm__c, Breedte_cm__c, Diameter_cm__c';
+    String leadProductQuery = 'SELECT Id, Lead__c, Product__c, Product__r.Product_Category__c, Gerelateerd_Product__c, Aantal__c, Totale_Prijs__c, Bijzonderheden__c, Lengte_cm__c, Breedte_cm__c, Diameter_cm__c';
         if (hasUnitPriceField) {
             leadProductQuery += ', Eenheidsprijs__c';
         }
@@ -474,10 +474,11 @@ global with sharing class LeadToOpportunityConverter {
             List<Lead_Product__c> primaryLeadProducts = new List<Lead_Product__c>();
             List<Lead_Product__c> extraLeadProducts = new List<Lead_Product__c>();
             for (Lead_Product__c lp : productsForLead) {
-                if (lp.Gerelateerd_Product__c == null) {
-                    primaryLeadProducts.add(lp);
-                } else {
+                String productCategory = getLeadProductCategory(lp);
+                if (shouldTreatLeadProductAsExtra(lp, productCategory)) {
                     extraLeadProducts.add(lp);
+                } else {
+                    primaryLeadProducts.add(lp);
                 }
             }
 
@@ -842,5 +843,33 @@ global with sharing class LeadToOpportunityConverter {
             return leadRecord.Name;
         }
         return 'Nieuwe Opportunity';
+    }
+
+    private static String getLeadProductCategory(Lead_Product__c leadProduct) {
+        if (leadProduct == null || leadProduct.Product__r == null) {
+            return null;
+        }
+        try {
+            return leadProduct.Product__r.Product_Category__c;
+        } catch (Exception ignore) {
+            return null;
+        }
+    }
+
+    private static Boolean shouldTreatLeadProductAsExtra(Lead_Product__c leadProduct, String category) {
+        if (leadProduct == null) {
+            return false;
+        }
+        if (leadProduct.Gerelateerd_Product__c != null) {
+            return true;
+        }
+        if (category == null) {
+            return false;
+        }
+        return equalsIgnoreCase(category, 'Extra') || equalsIgnoreCase(category, 'Package');
+    }
+
+    private static Boolean equalsIgnoreCase(String left, String right) {
+        return left != null && right != null && left.equalsIgnoreCase(right);
     }
 }

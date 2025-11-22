@@ -78,9 +78,10 @@ public with sharing class OpportunityToWorkOrderConverter {
 
         Set<Id> opportunityIds = aggregates.keySet();
         Map<Id, Opportunity> opportunityMap = new Map<Id, Opportunity>([
-            SELECT Id, Name, AccountId, Partner__c, Postcodegebied__c, Uniek_Segment__c,
+                 SELECT Id, Name, AccountId, Partner__c, Postcodegebied__c, Uniek_Segment__c,
                    Ophaalstraat__c, Ophaaladres_Toevoeging__c, Ophaalpostcode__c, Ophaalplaats__c,
-                   Afleverstraat__c, Afleveradres_Toevoeging__c, Afleverpostcode__c, Afleverplaats__c
+                     Afleverstraat__c, Afleveradres_Toevoeging__c, Afleverpostcode__c, Afleverplaats__c,
+                     Dienst_Postcode_Associatie__c
             FROM Opportunity
             WHERE Id IN :opportunityIds
         ]);
@@ -108,7 +109,7 @@ public with sharing class OpportunityToWorkOrderConverter {
         for (Werk_Order__c wo : [
             SELECT Id, Opportunity__c, RecordTypeId, Partner__c, Postcodegebied__c, Uniek_Segment__c,
                    Ander_Ophaaladres__c, Ophaaladres1__Street__s, Ophaaladres1__PostalCode__s, Ophaaladres1__City__s,
-                   Contactpersoon__c
+                   Contactpersoon__c, Dienst_Postcode_Associatie__c
             FROM Werk_Order__c
             WHERE Opportunity__c IN :opportunityIds
         ]) {
@@ -153,9 +154,10 @@ public with sharing class OpportunityToWorkOrderConverter {
                     accUpdate = new Account(Id = opp.AccountId);
                     accountUpdates.put(accUpdate.Id, accUpdate);
                 }
-                accUpdate.BillingStreet = composeStreet(opp.Afleverstraat__c, opp.Afleveradres_Toevoeging__c);
-                accUpdate.BillingPostalCode = opp.Afleverpostcode__c;
-                accUpdate.BillingCity = opp.Afleverplaats__c;
+                accUpdate.BillingStreet = normalizeBlankToNull(opp.Afleverstraat__c);
+                accUpdate.BillingPostalCode = normalizeBlankToNull(opp.Afleverpostcode__c);
+                accUpdate.BillingCity = normalizeBlankToNull(opp.Afleverplaats__c);
+                try { accUpdate.put('BillingAddress_toevoeging__c', normalizeBlankToNull(opp.Afleveradres_Toevoeging__c)); } catch (Exception ignore) {}
                 if (!accountIdToOppIds.containsKey(opp.AccountId)) {
                     accountIdToOppIds.put(opp.AccountId, new Set<Id>());
                 }
@@ -182,6 +184,12 @@ public with sharing class OpportunityToWorkOrderConverter {
                     existing.Uniek_Segment__c = opp.Uniek_Segment__c;
                     needsUpdate = true;
                 }
+                try {
+                    if (existing.Dienst_Postcode_Associatie__c != opp.Dienst_Postcode_Associatie__c) {
+                        existing.Dienst_Postcode_Associatie__c = opp.Dienst_Postcode_Associatie__c;
+                        needsUpdate = true;
+                    }
+                } catch (Exception ignore) {}
                 if (contactPersonId != null) {
                     try {
                         if (existing.Contactpersoon__c != contactPersonId) {
@@ -224,6 +232,7 @@ public with sharing class OpportunityToWorkOrderConverter {
             workOrder.Partner__c = opp.Partner__c;
             workOrder.Postcodegebied__c = opp.Postcodegebied__c;
             workOrder.Uniek_Segment__c = opp.Uniek_Segment__c;
+            try { workOrder.Dienst_Postcode_Associatie__c = opp.Dienst_Postcode_Associatie__c; } catch (Exception ignore) {}
             // Set status for Wasserij record type
             try { workOrder.Werk_Order_Status__c = 'Ophalen plannen'; } catch (Exception ignore) {}
             // Copy address additions from Opportunity
@@ -302,7 +311,8 @@ public with sharing class OpportunityToWorkOrderConverter {
 
         List<OpportunityLineItem> opportunityLineItems = [
             SELECT Id, OpportunityId, Quantity, Description,
-                   PricebookEntryId, PricebookEntry.Product2Id, Product2Id,
+                   PricebookEntryId, PricebookEntry.Product2Id, PricebookEntry.Product2.Product_Category__c,
+                   Product2Id, Product2.Product_Category__c,
                    Lengte_cm__c, Breedte_cm__c, Diameter_cm__c, Gerelateerd_Product__c
             FROM OpportunityLineItem
             WHERE OpportunityId IN :opportunityIds
@@ -361,6 +371,9 @@ public with sharing class OpportunityToWorkOrderConverter {
             if (agg == null || agg.werkOrderId == null) {
                 continue;
             }
+
+            String oliCategory = getOpportunityLineItemCategory(oli);
+            Boolean isPackageLine = isPackageCategory(oliCategory);
 
             // Check if a Wasserij item for this OLI already exists (idempotent behavior)
             Wasserij_Item__c existing = existingByLineItemId.get((String)oli.Id);
@@ -423,6 +436,11 @@ public with sharing class OpportunityToWorkOrderConverter {
             // Map will be completed after insert when we have IDs; capture OLI now for later correlation
             if (oli.Gerelateerd_Product__c != null) {
                 childToParentOli.put(oli.Id, oli.Gerelateerd_Product__c);
+            } else if (isPackageLine) {
+                AggregatedResult warnAgg = aggregates.get(oli.OpportunityId);
+                if (warnAgg != null) {
+                    warnAgg.messages.add('Package opportunity product ' + oli.Id + ' mist een gekoppelde primaire regel (Gerelateerd_Product__c). Item wordt als zelfstandig regel aangemaakt.');
+                }
             }
         }
 
@@ -722,17 +740,6 @@ public with sharing class OpportunityToWorkOrderConverter {
         return changed;
     }
 
-    private static String composeStreet(String street, String addition) {
-        List<String> parts = new List<String>();
-        if (!String.isBlank(street)) {
-            parts.add(street.trim());
-        }
-        if (!String.isBlank(addition)) {
-            parts.add(addition.trim());
-        }
-        return parts.isEmpty() ? null : String.join(parts, '\n');
-    }
-
     private static Id resolveWorkOrderContactId(Account account) {
         if (account == null) {
             return null;
@@ -792,6 +799,33 @@ public with sharing class OpportunityToWorkOrderConverter {
             return oli.PricebookEntry.Product2Id;
         }
         return oli.Product2Id;
+    }
+
+    private static String getOpportunityLineItemCategory(OpportunityLineItem oli) {
+        if (oli == null) {
+            return null;
+        }
+        String category;
+        try {
+            if (oli.PricebookEntry != null && oli.PricebookEntry.Product2 != null && String.isNotBlank(oli.PricebookEntry.Product2.Product_Category__c)) {
+                category = oli.PricebookEntry.Product2.Product_Category__c;
+            } else if (oli.Product2 != null && String.isNotBlank(oli.Product2.Product_Category__c)) {
+                category = oli.Product2.Product_Category__c;
+            } else {
+                category = null;
+            }
+        } catch (Exception ignore) {
+            category = null;
+        }
+        return category;
+    }
+
+    private static Boolean isPackageCategory(String category) {
+        return equalsIgnoreCase(category, 'Package');
+    }
+
+    private static Boolean equalsIgnoreCase(String left, String right) {
+        return left != null && right != null && left.equalsIgnoreCase(right);
     }
 
     private static Id getRecordTypeId(Schema.SObjectType sObjectType, String recordTypeName) {
